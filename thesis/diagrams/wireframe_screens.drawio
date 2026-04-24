@@ -1,0 +1,942 @@
+<mxfile host="Electron" modified="2026-04-11T10:00:00.000Z" version="26.0.0">
+  <diagram id="wireframes" name="Wireframes">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ========== TITLE ========== -->
+        <mxCell id="title" value="Рисунок 3.13 — Макеты основных экранов платформы" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="2320" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ================================================================ -->
+        <!-- SCREEN 1: CatalogPage (row 1, col 1)                            -->
+        <!-- Position: x=40, y=80, size: 740x780                             -->
+        <!-- ================================================================ -->
+        <mxCell id="s1" value="CatalogPage" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#333333;fontStyle=1;fontSize=13;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="740" height="780" as="geometry" />
+        </mxCell>
+
+        <!-- Header bar -->
+        <mxCell id="s1_header" value="A7A5 Crowdfunding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#ffffff;strokeColor=#333333;fontSize=12;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="10" y="40" width="720" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- Navigation links -->
+        <mxCell id="s1_nav" value="Каталог&amp;nbsp; | &amp;nbsp;Портфель&amp;nbsp; | &amp;nbsp;Создать&amp;nbsp; | &amp;nbsp;Профиль" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="s1">
+          <mxGeometry x="10" y="76" width="720" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Search bar -->
+        <mxCell id="s1_search" value="Поиск кампаний..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=10;align=left;spacingLeft=10;" vertex="1" parent="s1">
+          <mxGeometry x="10" y="106" width="500" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_searchbtn" value="Найти" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="s1">
+          <mxGeometry x="520" y="106" width="70" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Filters row -->
+        <mxCell id="s1_filt_label" value="Фильтры:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="10" y="146" width="60" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_filt_type" value="Тип токена ▾" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=9;" vertex="1" parent="s1">
+          <mxGeometry x="75" y="146" width="100" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_filt_status" value="Статус ▾" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=9;" vertex="1" parent="s1">
+          <mxGeometry x="185" y="146" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_filt_cat" value="Категория ▾" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=9;" vertex="1" parent="s1">
+          <mxGeometry x="275" y="146" width="100" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Token type filter badges -->
+        <mxCell id="s1_badge_debt" value="DEBT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="390" y="146" width="55" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_badge_rev" value="REVENUE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="450" y="146" width="65" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_badge_grow" value="GROWTH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="520" y="146" width="65" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_badge_div" value="DIVIDEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="590" y="146" width="70" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Card row 1 -->
+        <!-- Card 1 -->
+        <mxCell id="s1_c1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s1">
+          <mxGeometry x="10" y="186" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_img" value="[изображение]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="196" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_badge" value="DEBT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="264" width="45" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_title" value="Название проекта 1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="286" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_target" value="Цель: 50 000 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="306" width="130" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_days" value="12 дней" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="155" y="306" width="75" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_pbar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="326" width="210" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_pbar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="326" width="140" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c1_pct" value="67%" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#4CAF50;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="338" width="40" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- Card 2 -->
+        <mxCell id="s1_c2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s1">
+          <mxGeometry x="255" y="186" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_img" value="[изображение]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="265" y="196" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_badge" value="GROWTH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="265" y="264" width="55" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_title" value="Название проекта 2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="265" y="286" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_target" value="Цель: 120 000 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s1">
+          <mxGeometry x="265" y="306" width="130" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_days" value="28 дней" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="400" y="306" width="75" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_pbar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="265" y="326" width="210" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_pbar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="265" y="326" width="75" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c2_pct" value="36%" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#4CAF50;" vertex="1" parent="s1">
+          <mxGeometry x="265" y="338" width="40" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- Card 3 -->
+        <mxCell id="s1_c3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s1">
+          <mxGeometry x="500" y="186" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_img" value="[изображение]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="510" y="196" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_badge" value="DIVIDEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="510" y="264" width="60" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_title" value="Название проекта 3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="510" y="286" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_target" value="Цель: 80 000 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s1">
+          <mxGeometry x="510" y="306" width="130" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_days" value="5 дней" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="645" y="306" width="75" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_pbar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="510" y="326" width="210" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_pbar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="510" y="326" width="190" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c3_pct" value="91%" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#4CAF50;" vertex="1" parent="s1">
+          <mxGeometry x="510" y="338" width="40" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- Card row 2 -->
+        <!-- Card 4 -->
+        <mxCell id="s1_c4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s1">
+          <mxGeometry x="10" y="390" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_img" value="[изображение]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="400" width="210" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_badge" value="REVENUE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="468" width="60" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_title" value="Название проекта 4" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=11;fontStyle=1;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="490" width="210" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_target" value="Цель: 200 000 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="510" width="130" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_days" value="45 дней" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="155" y="510" width="75" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_pbar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="530" width="210" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_pbar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=none;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="530" width="50" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c4_pct" value="24%" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#4CAF50;" vertex="1" parent="s1">
+          <mxGeometry x="20" y="542" width="40" height="14" as="geometry" />
+        </mxCell>
+
+        <!-- Card 5 (placeholder) -->
+        <mxCell id="s1_c5" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;dashed=1;" vertex="1" parent="s1">
+          <mxGeometry x="255" y="390" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c5_dots" value="..." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="255" y="460" width="230" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Card 6 (placeholder) -->
+        <mxCell id="s1_c6" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;dashed=1;" vertex="1" parent="s1">
+          <mxGeometry x="500" y="390" width="230" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="s1_c6_dots" value="..." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=18;fontColor=#999999;" vertex="1" parent="s1">
+          <mxGeometry x="500" y="460" width="230" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Pagination -->
+        <mxCell id="s1_pag" value="&lt; 1  2  3  ...  12 &gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#666666;" vertex="1" parent="s1">
+          <mxGeometry x="210" y="600" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- ================================================================ -->
+        <!-- SCREEN 2: CampaignPage (row 1, col 2)                           -->
+        <!-- ================================================================ -->
+        <mxCell id="s2" value="CampaignPage" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#333333;fontStyle=1;fontSize=13;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="820" y="80" width="740" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_header" value="A7A5 Crowdfunding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#ffffff;strokeColor=#333333;fontSize=12;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="10" y="40" width="720" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_back" value="&lt; Назад к каталогу" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#6c8ebf;fontStyle=4;" vertex="1" parent="s2">
+          <mxGeometry x="10" y="86" width="150" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_title" value="Название проекта 1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="10" y="110" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_badge" value="DEBT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=9;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="320" y="114" width="55" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s2_img" value="[Изображение / видео проекта]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=10;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="10" y="150" width="440" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- Stats block -->
+        <mxCell id="s2_stats" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s2">
+          <mxGeometry x="470" y="150" width="260" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat1" value="Собрано" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="160" width="110" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat1v" value="33 500 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="176" width="110" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat2" value="Цель" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="610" y="160" width="110" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat2v" value="50 000 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="610" y="176" width="110" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat3" value="Инвесторов" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="210" width="110" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat3v" value="47" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="226" width="110" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat4" value="Осталось" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="610" y="210" width="110" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_stat4v" value="12 дней" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="610" y="226" width="110" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_pbar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="260" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_pbar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=none;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="260" width="160" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_pbar_lbl" value="67% собрано" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="272" width="240" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Milestone timeline -->
+        <mxCell id="s2_ml_label" value="Этапы (Milestones)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="10" y="326" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_tl_line" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#cccccc;strokeColor=none;" vertex="1" parent="s2">
+          <mxGeometry x="30" y="374" width="600" height="3" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m1" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#4CAF50;" vertex="1" parent="s2">
+          <mxGeometry x="55" y="366" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m1_lbl" value="Этап 1&#10;Прототип" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;" vertex="1" parent="s2">
+          <mxGeometry x="20" y="388" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m2" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFC107;strokeColor=#FFC107;" vertex="1" parent="s2">
+          <mxGeometry x="205" y="366" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m2_lbl" value="Этап 2&#10;Бета" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;" vertex="1" parent="s2">
+          <mxGeometry x="170" y="388" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m3" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#cccccc;strokeColor=#cccccc;" vertex="1" parent="s2">
+          <mxGeometry x="355" y="366" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m3_lbl" value="Этап 3&#10;Запуск" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;" vertex="1" parent="s2">
+          <mxGeometry x="320" y="388" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m4" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#cccccc;strokeColor=#cccccc;" vertex="1" parent="s2">
+          <mxGeometry x="505" y="366" width="18" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_m4_lbl" value="Этап 4&#10;Масштаб" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;" vertex="1" parent="s2">
+          <mxGeometry x="470" y="388" width="90" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Description -->
+        <mxCell id="s2_desc_label" value="Описание проекта" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="10" y="430" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_desc" value="Lorem ipsum dolor sit amet, consectetur adipiscing&#10;elit. Sed do eiusmod tempor incididunt ut labore&#10;et dolore magna aliqua..." style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;align=left;verticalAlign=top;spacingLeft=8;spacingTop=6;fontSize=9;fontColor=#666666;" vertex="1" parent="s2">
+          <mxGeometry x="10" y="458" width="440" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Invest form -->
+        <mxCell id="s2_inv" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="s2">
+          <mxGeometry x="470" y="430" width="260" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_title" value="Инвестировать" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="480" y="440" width="240" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_bal_lbl" value="Ваш баланс A7A5:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="490" y="470" width="110" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_bal" value="12 450 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="600" y="470" width="110" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_amt_lbl" value="Сумма инвестиции:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="s2">
+          <mxGeometry x="490" y="500" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_input" value="1 000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=11;align=left;spacingLeft=10;" vertex="1" parent="s2">
+          <mxGeometry x="490" y="524" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_unit" value="A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="650" y="528" width="50" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_q1" value="100" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="s2">
+          <mxGeometry x="490" y="566" width="50" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_q2" value="500" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="s2">
+          <mxGeometry x="548" y="566" width="50" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_q3" value="1000" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="s2">
+          <mxGeometry x="606" y="566" width="50" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_q4" value="MAX" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=9;" vertex="1" parent="s2">
+          <mxGeometry x="664" y="566" width="50" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_tok_lbl" value="Вы получите токенов:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s2">
+          <mxGeometry x="490" y="600" width="130" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_tok_val" value="100 PROJ1-DEBT" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="600" y="600" width="110" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s2_inv_btn" value="Инвестировать" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="s2">
+          <mxGeometry x="490" y="636" width="220" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ================================================================ -->
+        <!-- SCREEN 3: CreateCampaignPage (row 1, col 3)                      -->
+        <!-- ================================================================ -->
+        <mxCell id="s3" value="CreateCampaignPage" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#333333;fontStyle=1;fontSize=13;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="80" width="740" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3_header" value="A7A5 Crowdfunding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#ffffff;strokeColor=#333333;fontSize=12;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="10" y="40" width="720" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s3_title" value="Создание кампании" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="10" y="86" width="300" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Step indicator -->
+        <mxCell id="s3_step_line" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s3">
+          <mxGeometry x="100" y="136" width="540" height="3" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s1" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=10;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="90" y="126" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s1_lbl" value="Информация" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;" vertex="1" parent="s3">
+          <mxGeometry x="55" y="152" width="90" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s2" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="258" y="126" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s2_lbl" value="Тип токена" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;" vertex="1" parent="s3">
+          <mxGeometry x="225" y="152" width="90" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s3" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=10;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="428" y="126" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s3_lbl" value="Параметры" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="395" y="152" width="90" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s4" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=10;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="598" y="126" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_s4_lbl" value="Этапы" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;whiteSpace=wrap;fontSize=8;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="565" y="152" width="90" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2: Token type selection -->
+        <mxCell id="s3_step2_title" value="Шаг 2: Выберите тип токена" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=13;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="10" y="180" width="300" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- DEBT card -->
+        <mxCell id="s3_tc1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="s3">
+          <mxGeometry x="10" y="214" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc1_badge" value="DEBT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="224" width="55" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc1_name" value="Долговой токен" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="85" y="224" width="260" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc1_desc" value="Фиксированная процентная ставка.&#10;Возврат основной суммы + проценты&#10;по графику погашения." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;fontColor=#666666;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="254" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc1_sel" value="&#x25CB; Выбрать" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#b85450;" vertex="1" parent="s3">
+          <mxGeometry x="240" y="308" width="110" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- REVENUE_SHARE card -->
+        <mxCell id="s3_tc2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="s3">
+          <mxGeometry x="380" y="214" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc2_badge" value="REVENUE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="390" y="224" width="65" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc2_name" value="Доля выручки" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="465" y="224" width="260" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc2_desc" value="Процент от выручки проекта.&#10;Периодические выплаты до&#10;достижения лимита возврата." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;fontColor=#666666;" vertex="1" parent="s3">
+          <mxGeometry x="390" y="254" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc2_sel" value="&#x25CB; Выбрать" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#82b366;" vertex="1" parent="s3">
+          <mxGeometry x="610" y="308" width="110" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- GROWTH card (selected) -->
+        <mxCell id="s3_tc3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EBF4FF;strokeColor=#6c8ebf;strokeWidth=2;dashed=1;" vertex="1" parent="s3">
+          <mxGeometry x="10" y="350" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc3_badge" value="GROWTH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="360" width="65" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc3_name" value="Токен роста" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="95" y="360" width="260" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc3_desc" value="Стоимость привязана к KPI проекта.&#10;Торгуется на вторичном рынке.&#10;Buyback при достижении целей." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;fontColor=#666666;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="390" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc3_sel" value="&#x25CF; Выбрано" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#6c8ebf;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="240" y="444" width="110" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- DIVIDEND card -->
+        <mxCell id="s3_tc4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;strokeWidth=2;" vertex="1" parent="s3">
+          <mxGeometry x="380" y="350" width="350" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc4_badge" value="DIVIDEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="390" y="360" width="70" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc4_name" value="Дивидендный токен" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="470" y="360" width="260" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc4_desc" value="Доля в прибыли проекта.&#10;Бессрочные периодические выплаты&#10;пропорционально доле токенов." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;fontColor=#666666;" vertex="1" parent="s3">
+          <mxGeometry x="390" y="390" width="330" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_tc4_sel" value="&#x25CB; Выбрать" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#9673a6;" vertex="1" parent="s3">
+          <mxGeometry x="610" y="444" width="110" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Navigation buttons -->
+        <mxCell id="s3_prev" value="&#x2190; Назад" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=11;" vertex="1" parent="s3">
+          <mxGeometry x="10" y="490" width="120" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_next" value="Далее &#x2192;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="s3">
+          <mxGeometry x="610" y="490" width="120" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- Step hints -->
+        <mxCell id="s3_hints" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;dashed=1;" vertex="1" parent="s3">
+          <mxGeometry x="10" y="546" width="720" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_h_title" value="Остальные шаги:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="556" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_h1" value="Шаг 1 — Информация: название, описание, категория, изображение, целевая сумма, срок сбора" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="580" width="690" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_h3" value="Шаг 3 — Параметры: процентная ставка / доля выручки / KPI-метрики / дивидендная ставка (зависит от типа)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="604" width="690" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_h4" value="Шаг 4 — Этапы: добавление milestones (название, описание, % от суммы, дедлайн)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="628" width="690" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_hw1" value="Шаг 1: Форма ввода&#10;[Название]  [Описание]&#10;[Категория]  [Сумма]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=8;fontColor=#999999;align=left;spacingLeft=6;" vertex="1" parent="s3">
+          <mxGeometry x="20" y="660" width="165" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_hw3" value="Шаг 3: Параметры&#10;[Ставка %]  [Период]&#10;[Лимит возврата]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=8;fontColor=#999999;align=left;spacingLeft=6;" vertex="1" parent="s3">
+          <mxGeometry x="200" y="660" width="165" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s3_hw4" value="Шаг 4: Этапы&#10;+ Добавить этап&#10;[ Этап 1 ] [ Этап 2 ]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=8;fontColor=#999999;align=left;spacingLeft=6;" vertex="1" parent="s3">
+          <mxGeometry x="380" y="660" width="165" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ================================================================ -->
+        <!-- SCREEN 4: VotingPage (row 2, col 1)                             -->
+        <!-- ================================================================ -->
+        <mxCell id="s4" value="VotingPage" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#333333;fontStyle=1;fontSize=13;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="40" y="900" width="740" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_header" value="A7A5 Crowdfunding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#ffffff;strokeColor=#333333;fontSize=12;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="10" y="40" width="720" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_back" value="&lt; Назад к проекту" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#6c8ebf;fontStyle=4;" vertex="1" parent="s4">
+          <mxGeometry x="10" y="86" width="150" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_title" value="Голосование: Этап 2 — Бета-версия" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="10" y="110" width="500" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_status_badge" value="Голосование открыто" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFC107;strokeColor=#FFA000;fontSize=9;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="520" y="114" width="140" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Milestone report -->
+        <mxCell id="s4_report" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s4">
+          <mxGeometry x="10" y="150" width="720" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_rep_title" value="Отчёт о выполнении этапа" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="158" width="300" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_rep_date" value="Дата отчёта: 01.03.2026" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s4">
+          <mxGeometry x="500" y="158" width="220" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_rep_text" value="Автор проекта предоставил отчёт о выполнении Этапа 2:&#10;&#10;- Разработан прототип бета-версии платформы&#10;- Проведено пользовательское тестирование (25 участников)&#10;- Исправлены критические баги (список в приложении)&#10;- Развёрнута тестовая среда на staging-сервере" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;whiteSpace=wrap;fontSize=9;fontColor=#666666;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="186" width="700" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_rep_link" value="Приложения: отчёт.pdf, скриншоты.zip" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#6c8ebf;fontStyle=4;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="278" width="300" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Voting stats -->
+        <mxCell id="s4_vote_stats" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s4">
+          <mxGeometry x="10" y="336" width="720" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_vs_title" value="Статистика голосования" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="344" width="250" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Quorum -->
+        <mxCell id="s4_q_label" value="Кворум:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="376" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_q_pbar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s4">
+          <mxGeometry x="90" y="378" width="340" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_q_pbar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2196F3;strokeColor=none;" vertex="1" parent="s4">
+          <mxGeometry x="90" y="378" width="238" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_q_val" value="70% из 50% необходимых" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s4">
+          <mxGeometry x="440" y="376" width="170" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_q_check" value="Кворум достигнут" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="620" y="376" width="130" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- For / Against -->
+        <mxCell id="s4_fa_label" value="Результаты:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="410" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_for_lbl" value="За" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="438" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_for_bar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s4">
+          <mxGeometry x="60" y="440" width="400" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_for_bar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=none;" vertex="1" parent="s4">
+          <mxGeometry x="60" y="440" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_for_val" value="75%  (32 голоса)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s4">
+          <mxGeometry x="470" y="438" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_ag_lbl" value="Против" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#F44336;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="466" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_ag_bar_bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=none;" vertex="1" parent="s4">
+          <mxGeometry x="60" y="468" width="400" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_ag_bar" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F44336;strokeColor=none;" vertex="1" parent="s4">
+          <mxGeometry x="60" y="468" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_ag_val" value="25%  (11 голосов)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s4">
+          <mxGeometry x="470" y="466" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_time" value="Осталось: 3 дня 14 часов" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#999999;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="500" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Vote buttons -->
+        <mxCell id="s4_vote_section" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s4">
+          <mxGeometry x="10" y="556" width="720" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_vote_title" value="Ваш голос" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="564" width="200" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_vote_weight" value="Вес вашего голоса: 100 токенов (2.1% от общего числа)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s4">
+          <mxGeometry x="20" y="590" width="400" height="18" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s4_btn_for" value="Одобрить этап" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="40" y="626" width="280" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="s4_btn_against" value="Отклонить этап" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F44336;strokeColor=#D32F2F;fontColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1" parent="s4">
+          <mxGeometry x="400" y="626" width="280" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ================================================================ -->
+        <!-- SCREEN 5: PortfolioPage (row 2, col 2)                           -->
+        <!-- ================================================================ -->
+        <mxCell id="s5" value="PortfolioPage" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#333333;fontStyle=1;fontSize=13;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="820" y="900" width="740" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s5_header" value="A7A5 Crowdfunding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#ffffff;strokeColor=#333333;fontSize=12;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="40" width="720" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s5_title" value="Мой портфель" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="86" width="250" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Summary cards -->
+        <mxCell id="s5_sum1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="126" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum1_lbl" value="Всего инвестировано" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="15" y="130" width="160" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum1_val" value="8 500 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="15" y="148" width="160" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s5_sum2" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="195" y="126" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum2_lbl" value="Активных кампаний" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="200" y="130" width="160" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum2_val" value="4" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="200" y="148" width="160" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s5_sum3" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="380" y="126" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum3_lbl" value="Доступно к выплате" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="385" y="130" width="160" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum3_val" value="1 230 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#4CAF50;" vertex="1" parent="s5">
+          <mxGeometry x="385" y="148" width="160" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s5_sum4" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="565" y="126" width="165" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum4_lbl" value="Общий доход" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=8;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="570" y="130" width="155" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_sum4_val" value="+2 340 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;fontColor=#4CAF50;" vertex="1" parent="s5">
+          <mxGeometry x="570" y="148" width="155" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Table header -->
+        <mxCell id="s5_th" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f0f0f0;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="206" width="720" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_th1" value="Кампания" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="15" y="208" width="150" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_th2" value="Тип токена" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="170" y="208" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_th3" value="Токенов" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="265" y="208" width="80" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_th4" value="Статус" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="350" y="208" width="100" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_th5" value="К выплате" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="455" y="208" width="100" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_th6" value="Действие" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="560" y="208" width="160" height="26" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1 -->
+        <mxCell id="s5_r1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="236" width="720" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r1c1" value="Проект 1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="15" y="240" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r1c2" value="DEBT" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=8;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="185" y="246" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r1c3" value="500" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s5">
+          <mxGeometry x="265" y="240" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r1c4" value="Активна" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;" vertex="1" parent="s5">
+          <mxGeometry x="365" y="246" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r1c5" value="450 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="455" y="240" width="100" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r1c6" value="Получить" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="585" y="246" width="90" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2 -->
+        <mxCell id="s5_r2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="276" width="720" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r2c1" value="Проект 2" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="15" y="280" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r2c2" value="GROWTH" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=8;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="180" y="286" width="65" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r2c3" value="1 200" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s5">
+          <mxGeometry x="265" y="280" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r2c4" value="Активна" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;" vertex="1" parent="s5">
+          <mxGeometry x="365" y="286" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r2c5" value="---" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="455" y="280" width="100" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r2c6" value="---" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="585" y="280" width="90" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3 -->
+        <mxCell id="s5_r3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="316" width="720" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r3c1" value="Проект 3" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="15" y="320" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r3c2" value="DIVIDEND" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=8;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="178" y="326" width="68" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r3c3" value="800" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s5">
+          <mxGeometry x="265" y="320" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r3c4" value="Активна" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;" vertex="1" parent="s5">
+          <mxGeometry x="365" y="326" width="70" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r3c5" value="780 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="455" y="320" width="100" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r3c6" value="Получить" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="585" y="326" width="90" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Row 4 -->
+        <mxCell id="s5_r4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fafafa;strokeColor=#cccccc;" vertex="1" parent="s5">
+          <mxGeometry x="10" y="356" width="720" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r4c1" value="Проект 4" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="15" y="360" width="150" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r4c2" value="REVENUE" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=8;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="180" y="366" width="65" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r4c3" value="2 000" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;" vertex="1" parent="s5">
+          <mxGeometry x="265" y="360" width="80" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r4c4" value="Завершена" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#999999;fontSize=8;" vertex="1" parent="s5">
+          <mxGeometry x="360" y="366" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r4c5" value="---" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="455" y="360" width="100" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="s5_r4c6" value="---" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s5">
+          <mxGeometry x="585" y="360" width="90" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- Claim all -->
+        <mxCell id="s5_claim_all" value="Получить все доступные выплаты (1 230 A7A5)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=11;fontStyle=1;" vertex="1" parent="s5">
+          <mxGeometry x="180" y="420" width="380" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ================================================================ -->
+        <!-- SCREEN 6: ProfilePage (row 2, col 3)                            -->
+        <!-- ================================================================ -->
+        <mxCell id="s6" value="ProfilePage" style="swimlane;startSize=30;fillColor=#f5f5f5;strokeColor=#333333;fontStyle=1;fontSize=13;whiteSpace=wrap;html=1;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1600" y="900" width="740" height="780" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_header" value="A7A5 Crowdfunding" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#333333;fontColor=#ffffff;strokeColor=#333333;fontSize=12;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="10" y="40" width="720" height="36" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_title" value="Профиль" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=16;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="10" y="86" width="200" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Avatar -->
+        <mxCell id="s6_avatar" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="130" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_avatar_icon" value="[Аватар]" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s6">
+          <mxGeometry x="25" y="150" width="70" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- User info -->
+        <mxCell id="s6_name" value="Иван Иванов" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="120" y="130" width="300" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_email" value="ivan@example.com" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#999999;" vertex="1" parent="s6">
+          <mxGeometry x="120" y="156" width="300" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_role" value="Роль: Инвестор" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;fontColor=#666666;" vertex="1" parent="s6">
+          <mxGeometry x="120" y="178" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- KYC section -->
+        <mxCell id="s6_kyc_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s6">
+          <mxGeometry x="10" y="230" width="720" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_kyc_title" value="Статус KYC" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="238" width="150" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_kyc_badge" value="Верифицирован" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="180" y="238" width="130" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_kyc_s1" value="Email подтверждён" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;" vertex="1" parent="s6">
+          <mxGeometry x="30" y="272" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_kyc_s2" value="Документы загружены" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;" vertex="1" parent="s6">
+          <mxGeometry x="30" y="294" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_kyc_s3" value="Проверка пройдена" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;" vertex="1" parent="s6">
+          <mxGeometry x="30" y="316" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_kyc_lvl" value="Уровень верификации:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s6">
+          <mxGeometry x="350" y="272" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_kyc_l1" value="Базовый" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=8;" vertex="1" parent="s6">
+          <mxGeometry x="350" y="296" width="70" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_kyc_l2" value="Полный" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#388E3C;fontColor=#ffffff;fontSize=8;" vertex="1" parent="s6">
+          <mxGeometry x="430" y="296" width="70" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_kyc_l3" value="Квал. инвестор" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e0e0;strokeColor=#cccccc;fontSize=8;fontColor=#999999;" vertex="1" parent="s6">
+          <mxGeometry x="510" y="296" width="100" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Wallet section -->
+        <mxCell id="s6_wallet_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s6">
+          <mxGeometry x="10" y="380" width="720" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_w_title" value="Кошелёк" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="388" width="150" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_w_addr_lbl" value="Адрес кошелька:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="418" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_w_addr" value="0x742d...8f4E" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;fontFamily=monospace;" vertex="1" parent="s6">
+          <mxGeometry x="130" y="416" width="200" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_w_copy" value="Копировать" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=8;" vertex="1" parent="s6">
+          <mxGeometry x="340" y="416" width="80" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_w_bal_lbl" value="Баланс A7A5:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="454" width="110" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_w_bal" value="12 450 A7A5" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="130" y="450" width="200" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_w_net_lbl" value="Сеть:" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#999999;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="486" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_w_net" value="Ethereum Mainnet" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=9;" vertex="1" parent="s6">
+          <mxGeometry x="60" y="486" width="120" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_w_status" value="Подключён" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;" vertex="1" parent="s6">
+          <mxGeometry x="190" y="486" width="100" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Settings -->
+        <mxCell id="s6_settings" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;" vertex="1" parent="s6">
+          <mxGeometry x="10" y="550" width="720" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_set_title" value="Настройки" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=12;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="558" width="150" height="22" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_set1" value="Уведомления" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="590" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_set1_tog" value="[ВКЛ]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#4CAF50;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="170" y="590" width="50" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_set2" value="Язык" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="614" width="150" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_set2_val" value="Русский" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#999999;fontSize=9;" vertex="1" parent="s6">
+          <mxGeometry x="170" y="614" width="90" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="s6_set3" value="Двухфакторная аутентификация" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=10;" vertex="1" parent="s6">
+          <mxGeometry x="20" y="638" width="220" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_set3_tog" value="[ВЫКЛ]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;fontSize=9;fontColor=#F44336;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="240" y="638" width="50" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s6_set3_btn" value="Включить" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=8;" vertex="1" parent="s6">
+          <mxGeometry x="300" y="638" width="70" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Logout -->
+        <mxCell id="s6_logout" value="Выйти" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" vertex="1" parent="s6">
+          <mxGeometry x="10" y="700" width="120" height="36" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,128 @@
+<mxfile host="app.diagrams.net" agent="Claude" version="26.0.0">
+  <diagram id="class-diagram-contracts" name="Smart Contracts UML">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ========== IERC20 (A7A5) — Interface ========== -->
+        <mxCell id="ierc20" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;IERC20 (A7A5)&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;+ transferFrom(from, to, amount): bool&lt;br/&gt;+ approve(spender, amount): bool&lt;br/&gt;+ balanceOf(account): uint256&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#6c8ebf;fillColor=#dae8fc;" vertex="1" parent="1">
+          <mxGeometry x="790" y="30" width="310" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ========== FundFactory ========== -->
+        <mxCell id="fundfactory" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;FundFactory&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;- a7a5Token: IERC20&lt;br/&gt;- campaigns: mapping(uint =&amp;gt; address)&lt;br/&gt;- campaignCount: uint256&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;+ createCampaign(author, goal, tokenType,&lt;br/&gt;&amp;nbsp;&amp;nbsp;milestones, payoutParams): address&lt;br/&gt;+ getCampaign(id): address&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#82b366;fillColor=#d5e8d4;" vertex="1" parent="1">
+          <mxGeometry x="70" y="30" width="330" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CrowdFund (abstract) ========== -->
+        <mxCell id="crowdfund" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;abstract&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CrowdFund&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;- author: address&lt;br/&gt;- a7a5Token: IERC20&lt;br/&gt;- goalAmount: uint256&lt;br/&gt;- raisedAmount: uint256&lt;br/&gt;- state: CampaignState&lt;br/&gt;- tokenType: TokenType&lt;br/&gt;- milestones: Milestone[]&lt;br/&gt;- currentMilestone: uint256&lt;br/&gt;- investors: mapping(address =&amp;gt; uint256)&lt;br/&gt;- votes: mapping(uint =&amp;gt; mapping(address =&amp;gt; bool))&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;+ invest(amount): void&lt;br/&gt;+ submitMilestone(index, reportURI): void&lt;br/&gt;+ startVoting(index): void&lt;br/&gt;+ vote(index, approve): void&lt;br/&gt;+ finishVoting(index): void&lt;br/&gt;+ requestRefund(): void&lt;br/&gt;+ claimPayout(): void &lt;i&gt;{virtual}&lt;/i&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#d6b656;fillColor=#fff2cc;" vertex="1" parent="1">
+          <mxGeometry x="345" y="260" width="340" height="370" as="geometry" />
+        </mxCell>
+
+        <!-- ========== DebtCrowdFund ========== -->
+        <mxCell id="debtcrowdfund" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;DebtCrowdFund&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;- couponRate: uint256&lt;br/&gt;- maturityDate: uint256&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;+ makeCouponPayment(amount): void&lt;br/&gt;+ repayPrincipal(): void&lt;br/&gt;+ claimPayout(): void &lt;i&gt;{override}&lt;/i&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#b85450;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="20" y="710" width="280" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- ========== RevenueShareCrowdFund ========== -->
+        <mxCell id="revenuecrowdfund" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;RevenueShareCrowdFund&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;- revenuePercent: uint256&lt;br/&gt;- revenueCap: uint256&lt;br/&gt;- totalPaid: uint256&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;+ reportRevenue(amount): void&lt;br/&gt;+ claimPayout(): void &lt;i&gt;{override}&lt;/i&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#b85450;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="320" y="710" width="270" height="160" as="geometry" />
+        </mxCell>
+
+        <!-- ========== GrowthCrowdFund ========== -->
+        <mxCell id="growthcrowdfund" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;GrowthCrowdFund&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;font-style:italic;color:#888;&quot;&gt;(no extra attributes)&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;font-style:italic;color:#888;&quot;&gt;(payouts not applicable)&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#b85450;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="610" y="710" width="230" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- ========== DividendCrowdFund ========== -->
+        <mxCell id="dividendcrowdfund" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;DividendCrowdFund&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;- dividendPercent: uint256&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;+ distributeDividends(amount): void&lt;br/&gt;+ claimPayout(): void &lt;i&gt;{override}&lt;/i&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#b85450;fillColor=#f8cecc;" vertex="1" parent="1">
+          <mxGeometry x="860" y="710" width="280" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Enum: CampaignState ========== -->
+        <mxCell id="enum_campaignstate" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;CampaignState&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;Draft&lt;br/&gt;Collecting&lt;br/&gt;Active&lt;br/&gt;Completed&lt;br/&gt;Refunded&lt;br/&gt;Default&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="760" y="280" width="170" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Enum: TokenType ========== -->
+        <mxCell id="enum_tokentype" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;TokenType&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;DEBT&lt;br/&gt;REVENUE_SHARE&lt;br/&gt;GROWTH&lt;br/&gt;DIVIDEND&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="960" y="280" width="180" height="140" as="geometry" />
+        </mxCell>
+
+        <!-- ========== Enum: MilestoneState ========== -->
+        <mxCell id="enum_milestonestate" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;enumeration&amp;gt;&amp;gt;&lt;/i&gt;&lt;br/&gt;&lt;b&gt;MilestoneState&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;/&gt;&lt;p style=&quot;margin:0px;margin-left:4px;font-size:11px;&quot;&gt;Active&lt;br/&gt;Submitted&lt;br/&gt;Voting&lt;br/&gt;Approved&lt;br/&gt;Rejected&lt;br/&gt;FailedQuorum&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fontSize=12;fontFamily=Courier New;rounded=0;shadow=0;strokeColor=#9673a6;fillColor=#e1d5e7;" vertex="1" parent="1">
+          <mxGeometry x="960" y="450" width="180" height="170" as="geometry" />
+        </mxCell>
+
+        <!-- ========== RELATIONSHIPS ========== -->
+
+        <!-- FundFactory --creates--> CrowdFund (dependency) -->
+        <mxCell id="rel_factory_crowdfund" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.15;entryDx=0;entryDy=0;strokeColor=#333333;fontSize=11;" edge="1" parent="1" source="fundfactory" target="crowdfund">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_factory_crowdfund_label" value="&amp;lt;&amp;lt;creates&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Courier New;fontStyle=2;" vertex="1" connectable="0" parent="rel_factory_crowdfund">
+          <mxGeometry x="-0.15" y="-15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- CrowdFund --uses--> IERC20 (dependency) -->
+        <mxCell id="rel_crowdfund_ierc20" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeColor=#333333;fontSize=11;" edge="1" parent="1" source="crowdfund" target="ierc20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_crowdfund_ierc20_label" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Courier New;fontStyle=2;" vertex="1" connectable="0" parent="rel_crowdfund_ierc20">
+          <mxGeometry x="-0.1" y="15" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- FundFactory --uses--> IERC20 (dependency) -->
+        <mxCell id="rel_factory_ierc20" style="endArrow=open;endSize=12;dashed=1;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#333333;fontSize=11;" edge="1" parent="1" source="fundfactory" target="ierc20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_factory_ierc20_label" value="&amp;lt;&amp;lt;uses&amp;gt;&amp;gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontFamily=Courier New;fontStyle=2;" vertex="1" connectable="0" parent="rel_factory_ierc20">
+          <mxGeometry x="-0.1" y="-12" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- DebtCrowdFund extends CrowdFund -->
+        <mxCell id="rel_debt_crowdfund" style="endArrow=block;endFill=0;endSize=16;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.15;entryY=1;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1" source="debtcrowdfund" target="crowdfund">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- RevenueShareCrowdFund extends CrowdFund -->
+        <mxCell id="rel_revenue_crowdfund" style="endArrow=block;endFill=0;endSize=16;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.4;entryY=1;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1" source="revenuecrowdfund" target="crowdfund">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GrowthCrowdFund extends CrowdFund -->
+        <mxCell id="rel_growth_crowdfund" style="endArrow=block;endFill=0;endSize=16;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.65;entryY=1;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1" source="growthcrowdfund" target="crowdfund">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- DividendCrowdFund extends CrowdFund -->
+        <mxCell id="rel_dividend_crowdfund" style="endArrow=block;endFill=0;endSize=16;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.85;entryY=1;entryDx=0;entryDy=0;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1" source="dividendcrowdfund" target="crowdfund">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CrowdFund uses CampaignState -->
+        <mxCell id="rel_crowdfund_campaignstate" style="endArrow=open;endSize=10;dashed=1;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#666666;" edge="1" parent="1" source="crowdfund" target="enum_campaignstate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CrowdFund uses TokenType -->
+        <mxCell id="rel_crowdfund_tokentype" style="endArrow=open;endSize=10;dashed=1;html=1;exitX=1;exitY=0.35;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#666666;" edge="1" parent="1" source="crowdfund" target="enum_tokentype">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- CrowdFund uses MilestoneState -->
+        <mxCell id="rel_crowdfund_milestonestate" style="endArrow=open;endSize=10;dashed=1;html=1;exitX=1;exitY=0.55;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#666666;" edge="1" parent="1" source="crowdfund" target="enum_milestonestate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

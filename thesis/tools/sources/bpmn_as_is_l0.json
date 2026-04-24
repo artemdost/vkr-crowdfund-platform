@@ -1,0 +1,295 @@
+{
+  "id": "AS_IS_L0",
+  "name": "Reimported from /Users/artemdostalev/Documents/ВКР/ВКР/BPMN/bpmn_as_is_l0.bpmn",
+  "pools": [
+    {
+      "id": "Participant_Process",
+      "name": "Процесс Web2-краудфандинга",
+      "processId": "Process_Main",
+      "bounds": [
+        40,
+        80,
+        1510,
+        340
+      ],
+      "elements": [
+        {
+          "id": "pCreate",
+          "type": "userTask",
+          "name": "Создать кампанию",
+          "pos": [
+            160,
+            200
+          ],
+          "size": [
+            160,
+            80
+          ]
+        },
+        {
+          "id": "pCollect",
+          "type": "serviceTask",
+          "name": "Собрать средства (30-60 дней)",
+          "pos": [
+            380,
+            200
+          ],
+          "size": [
+            180,
+            80
+          ]
+        },
+        {
+          "id": "pCheck",
+          "type": "exclusiveGateway",
+          "name": "Цель достигнута?",
+          "pos": [
+            620,
+            215
+          ],
+          "size": [
+            50,
+            50
+          ]
+        },
+        {
+          "id": "pTransfer",
+          "type": "serviceTask",
+          "name": "Перевести автору единовременно",
+          "pos": [
+            740,
+            100
+          ],
+          "size": [
+            200,
+            80
+          ]
+        },
+        {
+          "id": "pSpend",
+          "type": "manualTask",
+          "name": "Автор тратит средства без контроля",
+          "pos": [
+            990,
+            100
+          ],
+          "size": [
+            220,
+            80
+          ]
+        },
+        {
+          "id": "pDeliverReward",
+          "type": "manualTask",
+          "name": "Доставить reward инвесторам",
+          "pos": [
+            1250,
+            100
+          ],
+          "size": [
+            200,
+            80
+          ]
+        },
+        {
+          "id": "pRefund",
+          "type": "serviceTask",
+          "name": "Вернуть инвесторам (задержка 14-30 дней)",
+          "pos": [
+            740,
+            320
+          ],
+          "size": [
+            260,
+            80
+          ]
+        },
+        {
+          "id": "pStart",
+          "type": "startEvent",
+          "pos": [
+            80,
+            222
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "pEnd1",
+          "type": "endEvent",
+          "pos": [
+            1490,
+            122
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "pEnd2",
+          "type": "endEvent",
+          "pos": [
+            1050,
+            342
+          ],
+          "size": [
+            36,
+            36
+          ]
+        }
+      ],
+      "flows": [
+        {
+          "id": "Flow_1",
+          "from": "pStart",
+          "to": "pCreate",
+          "waypoints": [
+            [
+              116,
+              240
+            ],
+            [
+              160,
+              240
+            ]
+          ]
+        },
+        {
+          "id": "Flow_2",
+          "from": "pCreate",
+          "to": "pCollect",
+          "waypoints": [
+            [
+              320,
+              240
+            ],
+            [
+              380,
+              240
+            ]
+          ]
+        },
+        {
+          "id": "Flow_3",
+          "from": "pCollect",
+          "to": "pCheck",
+          "waypoints": [
+            [
+              560,
+              240
+            ],
+            [
+              620,
+              240
+            ]
+          ]
+        },
+        {
+          "id": "Flow_4",
+          "from": "pCheck",
+          "to": "pTransfer",
+          "name": "Да",
+          "waypoints": [
+            [
+              645,
+              215
+            ],
+            [
+              645,
+              140
+            ],
+            [
+              740,
+              140
+            ]
+          ]
+        },
+        {
+          "id": "Flow_5",
+          "from": "pTransfer",
+          "to": "pSpend",
+          "waypoints": [
+            [
+              940,
+              140
+            ],
+            [
+              990,
+              140
+            ]
+          ]
+        },
+        {
+          "id": "Flow_6",
+          "from": "pSpend",
+          "to": "pDeliverReward",
+          "waypoints": [
+            [
+              1210,
+              140
+            ],
+            [
+              1250,
+              140
+            ]
+          ]
+        },
+        {
+          "id": "Flow_6b",
+          "from": "pDeliverReward",
+          "to": "pEnd1",
+          "waypoints": [
+            [
+              1450,
+              140
+            ],
+            [
+              1490,
+              140
+            ]
+          ]
+        },
+        {
+          "id": "Flow_7",
+          "from": "pCheck",
+          "to": "pRefund",
+          "name": "Нет",
+          "waypoints": [
+            [
+              645,
+              265
+            ],
+            [
+              645,
+              360
+            ],
+            [
+              740,
+              360
+            ]
+          ]
+        },
+        {
+          "id": "Flow_8",
+          "from": "pRefund",
+          "to": "pEnd2",
+          "waypoints": [
+            [
+              1000,
+              360
+            ],
+            [
+              1050,
+              360
+            ]
+          ]
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "messageFlows": []
+}

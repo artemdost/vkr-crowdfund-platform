@@ -1,0 +1,69 @@
+# === Secrets ===
+*.env
+.env.*
+!.env.example
+credentials.json
+token.json
+client_secret_*.json
+*_secret*.json
+last_doc_id.txt
+
+# === Node / JavaScript ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json.bak
+
+# === Hardhat / Solidity ===
+artifacts/
+cache/
+coverage/
+coverage.json
+typechain/
+typechain-types/
+deployed/addresses.json
+deployed/abi/
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# === Databases ===
+*.sqlite
+*.sqlite3
+*.db
+thesis/data/
+prototype/backend/data/
+
+# === OS ===
+.DS_Store
+Thumbs.db
+._*
+
+# === Editors ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# === Word temp files ===
+~$*.docx
+~$*.doc
+
+# === Playwright / Claude ===
+.playwright-mcp/
+.claude/
+
+# === Build artifacts (thesis) ===
+thesis/~$*.docx
+
+# === Large media ===
+*.mov
+*.mp4

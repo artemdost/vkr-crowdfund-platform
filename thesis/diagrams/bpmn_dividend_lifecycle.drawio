@@ -1,0 +1,234 @@
+<mxfile host="Electron" modified="2026-04-11T12:00:00.000Z" version="26.0.0">
+  <diagram id="bpmn-dividend-lifecycle" name="BPMN: Dividend Token Lifecycle">
+    <mxGraphModel dx="2200" dy="1100" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2400" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ============================================================ -->
+        <!-- TITLE                                                         -->
+        <!-- ============================================================ -->
+        <mxCell id="title" value="BPMN: Жизненный цикл дивидендного токена (DividendToken)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="2320" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- POOL: Автор                                                    -->
+        <!-- ============================================================ -->
+        <mxCell id="poolAuthor" value="Автор" style="shape=swimlane;startSize=30;horizontal=0;swimlaneFillColor=#fff8e1;strokeColor=#d6b656;fillColor=#fff8e1;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="2320" height="200" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aStart" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="poolAuthor">
+          <mxGeometry x="60" y="75" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="aStartLabel" value="Все milestones&#10;одобрены" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=9;" vertex="1" parent="poolAuthor">
+          <mxGeometry x="35" y="130" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aProfit" value="[U] Подготовить&#10;отчёт о прибыли" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="poolAuthor">
+          <mxGeometry x="440" y="60" width="170" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="aDistribute" value="[U] Распределить&#10;дивиденды&#10;distributeDividends()" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="poolAuthor">
+          <mxGeometry x="660" y="60" width="190" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- POOL: Смарт-контракт                                          -->
+        <!-- ============================================================ -->
+        <mxCell id="poolSC" value="Смарт-контракт&#10;DividendToken" style="shape=swimlane;startSize=30;horizontal=0;swimlaneFillColor=#f1ecf6;strokeColor=#9673a6;fillColor=#f1ecf6;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="2320" height="230" as="geometry" />
+        </mxCell>
+
+        <mxCell id="scTimerDiv" value="Дивидендный&#10;период&#10;(квартал/год)" style="shape=mxgraph.bpmn.shape;perimeter=mxPerimeter.ellipsePerimeter;symbol=timer;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;fontSize=10;" vertex="1" parent="poolSC">
+          <mxGeometry x="200" y="55" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="scAccept" value="[S] Принять A7A5&#10;от автора&#10;transferFrom()&#10;dividendPercent &amp;times; прибыль" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="poolSC">
+          <mxGeometry x="900" y="35" width="200" height="90" as="geometry" />
+        </mxCell>
+
+        <mxCell id="scDistribute" value="[S] Распределить&#10;по держателям&#10;пропорционально" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;align=center;" vertex="1" parent="poolSC">
+          <mxGeometry x="1150" y="40" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="scTransfer" value="[S] Перевести&#10;A7A5 инвестору" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=center;" vertex="1" parent="poolSC">
+          <mxGeometry x="1600" y="40" width="170" height="80" as="geometry" />
+        </mxCell>
+
+        <mxCell id="scGwContinue" value="Проект&#10;продолжает&#10;работать?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=center;" vertex="1" parent="poolSC">
+          <mxGeometry x="1840" y="30" width="140" height="100" as="geometry" />
+        </mxCell>
+
+        <mxCell id="scEnd" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=4;" vertex="1" parent="poolSC">
+          <mxGeometry x="2070" y="55" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="scEndLabel" value="Проект&#10;завершён" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=9;" vertex="1" parent="poolSC">
+          <mxGeometry x="2055" y="110" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- POOL: Инвестор                                                 -->
+        <!-- ============================================================ -->
+        <mxCell id="poolInvestor" value="Инвестор" style="shape=swimlane;startSize=30;horizontal=0;swimlaneFillColor=#eaf5ea;strokeColor=#82b366;fillColor=#eaf5ea;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="550" width="2320" height="170" as="geometry" />
+        </mxCell>
+
+        <mxCell id="iClaim" value="[U] Запросить&#10;выплату&#10;claimPayout()" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;align=center;" vertex="1" parent="poolInvestor">
+          <mxGeometry x="1380" y="45" width="170" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- SEQUENCE FLOWS                                                 -->
+        <!-- ============================================================ -->
+
+        <!-- Author: start -> profit -->
+        <mxCell id="e01" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="aStart" target="aProfit" parent="poolAuthor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Author: profit -> distribute -->
+        <mxCell id="e02" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="aProfit" target="aDistribute" parent="poolAuthor">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SC: accept -> distribute -->
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="scAccept" target="scDistribute" parent="poolSC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SC: distribute -> transfer -->
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="scDistribute" target="scTransfer" parent="poolSC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SC: transfer -> gwContinue -->
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" source="scTransfer" target="scGwContinue" parent="poolSC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SC: gwContinue -> end (Нет) -->
+        <mxCell id="e13" value="Нет" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;labelBackgroundColor=#ffffff;fontSize=10;" edge="1" source="scGwContinue" target="scEnd" parent="poolSC">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SC: gwContinue -> timerDiv (Да, loop back) -->
+        <mxCell id="e14" value="Да" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;exitX=0.5;exitY=0;labelBackgroundColor=#ffffff;fontSize=10;" edge="1" source="scGwContinue" target="scTimerDiv" parent="poolSC">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1910" y="15" />
+              <mxPoint x="225" y="15" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- MESSAGE FLOWS (between pools, parent=1)                       -->
+        <!-- ============================================================ -->
+
+        <!-- Timer -> Author profit (signal) -->
+        <mxCell id="m01" value="" style="endArrow=open;endFill=0;dashed=1;startArrow=oval;startFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" source="scTimerDiv" target="aProfit" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Author distribute -> SC accept (A7A5) -->
+        <mxCell id="m02" value="A7A5 (дивиденды)" style="endArrow=open;endFill=0;dashed=1;startArrow=oval;startFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;fontSize=9;" edge="1" source="aDistribute" target="scAccept" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SC transfer -> Investor (notification) -->
+        <mxCell id="m03" value="" style="endArrow=open;endFill=0;dashed=1;startArrow=oval;startFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;" edge="1" source="scTransfer" target="iClaim" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Investor claim -> SC transfer -->
+        <mxCell id="m04" value="claimPayout()" style="endArrow=open;endFill=0;dashed=1;startArrow=oval;startFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=#ffffff;fontSize=9;" edge="1" source="iClaim" target="scTransfer" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1540" y="665" />
+              <mxPoint x="1540" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ANNOTATION                                                     -->
+        <!-- ============================================================ -->
+        <mxCell id="annNote" value="Дивидендные выплаты&#10;бессрочны, пока проект&#10;продолжает работать" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;size=15;" vertex="1" parent="1">
+          <mxGeometry x="2000" y="560" width="220" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Association: annotation -> gateway -->
+        <mxCell id="assoc1" style="endArrow=none;dashed=1;html=1;dashPattern=1 4;" edge="1" source="annNote" target="scGwContinue" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- LEGEND                                                         -->
+        <!-- ============================================================ -->
+        <mxCell id="legend" value="Условные обозначения" style="swimlane;startSize=25;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="740" width="900" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="legStart" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="35" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legStartL" value="Стартовое событие" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="45" y="38" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legEnd" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=4;" vertex="1" parent="legend">
+          <mxGeometry x="10" y="72" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legEndL" value="Конечное событие" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="45" y="75" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legTimer" value="" style="shape=mxgraph.bpmn.shape;perimeter=mxPerimeter.ellipsePerimeter;symbol=timer;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="legend">
+          <mxGeometry x="180" y="35" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legTimerL" value="Таймер" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="215" y="38" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legGw" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="legend">
+          <mxGeometry x="180" y="72" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legGwL" value="XOR-шлюз" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="215" y="75" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legTask" value="" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="legend">
+          <mxGeometry x="330" y="35" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legTaskL" value="Задача (смарт-контракт)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="385" y="38" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legTaskA" value="" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="legend">
+          <mxGeometry x="330" y="72" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legTaskAL" value="Задача (автор)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="385" y="75" width="120" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legTaskI" value="" style="rounded=1;arcSize=25;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="legend">
+          <mxGeometry x="560" y="35" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legTaskIL" value="Задача (инвестор / успех)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="615" y="38" width="160" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legAnn" value="" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;size=10;" vertex="1" parent="legend">
+          <mxGeometry x="560" y="72" width="50" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="legAnnL" value="Аннотация" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="615" y="75" width="80" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="legMsg" value="" style="endArrow=open;endFill=0;dashed=1;startArrow=oval;startFill=0;html=1;" edge="1" parent="legend">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="790" y="50" as="sourcePoint" />
+            <mxPoint x="850" y="50" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="legMsgL" value="Message Flow" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="legend">
+          <mxGeometry x="790" y="75" width="100" height="25" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

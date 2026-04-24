@@ -1,0 +1,102 @@
+<mxfile host="app.diagrams.net" modified="2026-04-11T10:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="Deployment Diagram" id="deployment">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Title -->
+        <mxCell id="title" value="Диаграмма развёртывания платформы" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="320" height="30" as="geometry"/>
+        </mxCell>
+        <!-- Client Node -->
+        <mxCell id="client" value="&lt;&lt;device&gt;&gt;&#xa;Браузер пользователя" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;size=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="70" width="220" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="client_spa" value="&lt;&lt;artifact&gt;&gt;&#xa;React SPA&#xa;(HTML/JS/CSS)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="65" y="120" width="170" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Web3 Wallet -->
+        <mxCell id="wallet_node" value="&lt;&lt;device&gt;&gt;&#xa;Web3 Кошелёк&#xa;(MetaMask / кастодиальный)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;size=10;" vertex="1" parent="1">
+          <mxGeometry x="40" y="250" width="220" height="100" as="geometry"/>
+        </mxCell>
+        <!-- CDN -->
+        <mxCell id="cdn" value="&lt;&lt;execution environment&gt;&gt;&#xa;CDN (Cloudflare)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;size=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="200" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="cdn_art" value="&lt;&lt;artifact&gt;&gt; static bundle" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="105" width="160" height="30" as="geometry"/>
+        </mxCell>
+        <!-- App Server Node -->
+        <mxCell id="app_server" value="&lt;&lt;execution environment&gt;&gt;&#xa;App Server (Docker / VPS)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;size=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="200" width="300" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="app_node" value="&lt;&lt;artifact&gt;&gt;&#xa;Node.js Backend&#xa;(Express + ethers.js)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="250" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="app_event" value="&lt;&lt;artifact&gt;&gt;&#xa;Event Listener Service" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="310" width="180" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="app_wallet" value="&lt;&lt;artifact&gt;&gt;&#xa;Wallet Manager&#xa;(keystore encrypted)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="360" y="360" width="180" height="50" as="geometry"/>
+        </mxCell>
+        <!-- Database Node -->
+        <mxCell id="db_node" value="&lt;&lt;execution environment&gt;&gt;&#xa;Database Server" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;size=10;" vertex="1" parent="1">
+          <mxGeometry x="340" y="510" width="200" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="db_pg" value="&lt;&lt;artifact&gt;&gt;&#xa;PostgreSQL 16" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="365" y="560" width="150" height="40" as="geometry"/>
+        </mxCell>
+        <!-- Blockchain Node -->
+        <mxCell id="bc_node" value="&lt;&lt;execution environment&gt;&gt;&#xa;EVM Blockchain (Polygon)" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;size=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="200" width="300" height="250" as="geometry"/>
+        </mxCell>
+        <mxCell id="bc_a7a5" value="&lt;&lt;artifact&gt;&gt;&#xa;A7A5 Token (ERC-20)&#xa;[внешний, уже развёрнут]" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="250" width="200" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="bc_factory" value="&lt;&lt;artifact&gt;&gt;&#xa;FundFactory.sol" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="310" width="200" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="bc_crowd" value="&lt;&lt;artifact&gt;&gt;&#xa;CrowdFund.sol (×N)&#xa;[DebtCF / RevShareCF / GrowthCF / DivCF]" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="360" width="260" height="50" as="geometry"/>
+        </mxCell>
+        <!-- IPFS Node -->
+        <mxCell id="ipfs_node" value="&lt;&lt;execution environment&gt;&gt;&#xa;IPFS Gateway" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;size=10;" vertex="1" parent="1">
+          <mxGeometry x="720" y="510" width="200" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="ipfs_art" value="&lt;&lt;artifact&gt;&gt;&#xa;Milestone Reports (JSON)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="740" y="560" width="160" height="35" as="geometry"/>
+        </mxCell>
+        <!-- Connections -->
+        <mxCell id="conn1" value="HTTPS" style="endArrow=open;endFill=0;dashed=1;fontSize=10;" edge="1" source="client" target="cdn" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn2" value="HTTPS / REST" style="endArrow=open;endFill=0;dashed=1;fontSize=10;" edge="1" source="client" target="app_server" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="200"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="conn3" value="JSON-RPC" style="endArrow=open;endFill=0;dashed=1;fontSize=10;" edge="1" source="app_server" target="bc_node" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn4" value="TCP/IP" style="endArrow=open;endFill=0;dashed=1;fontSize=10;" edge="1" source="app_server" target="db_node" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn5" value="HTTP" style="endArrow=open;endFill=0;dashed=1;fontSize=10;" edge="1" source="app_server" target="ipfs_node" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="conn6" value="Web3 Provider&#xa;(RPC)" style="endArrow=open;endFill=0;dashed=1;fontSize=10;" edge="1" source="wallet_node" target="bc_node" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="450"/>
+              <mxPoint x="150" y="700"/>
+              <mxPoint x="870" y="700"/>
+              <mxPoint x="870" y="460"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

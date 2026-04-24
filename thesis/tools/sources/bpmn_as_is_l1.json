@@ -1,0 +1,1079 @@
+{
+  "id": "AS_IS_L1",
+  "name": "Reimported from /Users/artemdostalev/Documents/ВКР/ВКР/BPMN/bpmn_as_is_l1.bpmn",
+  "pools": [
+    {
+      "id": "Participant_Author",
+      "name": "Автор проекта",
+      "processId": "Process_Author",
+      "bounds": [
+        160,
+        80,
+        1400,
+        240
+      ],
+      "elements": [
+        {
+          "id": "aStart",
+          "type": "startEvent",
+          "pos": [
+            220,
+            167
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "aPrepare",
+          "type": "userTask",
+          "name": "Подготовить описание проекта",
+          "pos": [
+            290,
+            145
+          ],
+          "size": [
+            140,
+            80
+          ]
+        },
+        {
+          "id": "aSubmit",
+          "type": "userTask",
+          "name": "Подать заявку на платформу",
+          "pos": [
+            460,
+            145
+          ],
+          "size": [
+            140,
+            80
+          ]
+        },
+        {
+          "id": "aWait",
+          "type": "eventBasedGateway",
+          "pos": [
+            660,
+            160
+          ],
+          "size": [
+            50,
+            50
+          ]
+        },
+        {
+          "id": "aEndOk",
+          "type": "endEvent",
+          "pos": [
+            1430,
+            133
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "aUseFunds",
+          "type": "manualTask",
+          "name": "Тратить средства по усмотрению",
+          "pos": [
+            1065,
+            111
+          ],
+          "size": [
+            150,
+            80
+          ]
+        },
+        {
+          "id": "aDeliverReward",
+          "type": "manualTask",
+          "name": "Доставить reward инвесторам",
+          "pos": [
+            1245,
+            111
+          ],
+          "size": [
+            160,
+            80
+          ]
+        },
+        {
+          "id": "aReceive",
+          "type": "userTask",
+          "name": "Получить средства единовременно",
+          "pos": [
+            870,
+            111
+          ],
+          "size": [
+            160,
+            80
+          ]
+        },
+        {
+          "id": "aRecvOk",
+          "type": "intermediateCatchEvent",
+          "pos": [
+            760,
+            133
+          ],
+          "size": [
+            36,
+            36
+          ],
+          "trigger": "message"
+        },
+        {
+          "id": "aRecvFail",
+          "type": "intermediateCatchEvent",
+          "pos": [
+            881,
+            222
+          ],
+          "size": [
+            36,
+            36
+          ],
+          "trigger": "message"
+        },
+        {
+          "id": "aEndFail",
+          "type": "endEvent",
+          "pos": [
+            972,
+            222
+          ],
+          "size": [
+            36,
+            36
+          ]
+        }
+      ],
+      "flows": [
+        {
+          "id": "Flow_a1",
+          "from": "aStart",
+          "to": "aPrepare",
+          "waypoints": [
+            [
+              256,
+              185
+            ],
+            [
+              290,
+              185
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a2",
+          "from": "aPrepare",
+          "to": "aSubmit",
+          "waypoints": [
+            [
+              430,
+              185
+            ],
+            [
+              460,
+              185
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a3",
+          "from": "aSubmit",
+          "to": "aWait",
+          "waypoints": [
+            [
+              600,
+              185
+            ],
+            [
+              660,
+              185
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a4",
+          "from": "aWait",
+          "to": "aRecvOk",
+          "waypoints": [
+            [
+              685,
+              160
+            ],
+            [
+              685,
+              151
+            ],
+            [
+              760,
+              151
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a5",
+          "from": "aWait",
+          "to": "aRecvFail",
+          "waypoints": [
+            [
+              685,
+              210
+            ],
+            [
+              685,
+              240
+            ],
+            [
+              881,
+              240
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a8",
+          "from": "aUseFunds",
+          "to": "aDeliverReward",
+          "waypoints": [
+            [
+              1215,
+              151
+            ],
+            [
+              1245,
+              151
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a10",
+          "from": "aDeliverReward",
+          "to": "aEndOk",
+          "waypoints": [
+            [
+              1405,
+              151
+            ],
+            [
+              1430,
+              151
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a7",
+          "from": "aReceive",
+          "to": "aUseFunds",
+          "waypoints": [
+            [
+              1030,
+              151
+            ],
+            [
+              1065,
+              151
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a6",
+          "from": "aRecvOk",
+          "to": "aReceive",
+          "waypoints": [
+            [
+              796,
+              151
+            ],
+            [
+              870,
+              151
+            ]
+          ]
+        },
+        {
+          "id": "Flow_a9",
+          "from": "aRecvFail",
+          "to": "aEndFail",
+          "waypoints": [
+            [
+              917,
+              240
+            ],
+            [
+              972,
+              240
+            ]
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "Ann_pain1",
+          "text": "Узкое место №1: автор тратит средства без контроля",
+          "target": "aUseFunds",
+          "pos": [
+            1060,
+            15
+          ],
+          "size": [
+            200,
+            50
+          ]
+        },
+        {
+          "id": "Ann_pain5",
+          "text": "Узкое место №5: риск недоставки reward",
+          "target": "aDeliverReward",
+          "pos": [
+            1255,
+            15
+          ],
+          "size": [
+            190,
+            50
+          ]
+        }
+      ]
+    },
+    {
+      "id": "Participant_Platform",
+      "name": "Платформа краудфандинга",
+      "processId": "Process_Platform",
+      "bounds": [
+        160,
+        360,
+        1400,
+        360
+      ],
+      "elements": [
+        {
+          "id": "pStart",
+          "type": "startEvent",
+          "pos": [
+            220,
+            522
+          ],
+          "size": [
+            36,
+            36
+          ],
+          "trigger": "message"
+        },
+        {
+          "id": "pModerate",
+          "type": "userTask",
+          "name": "Модерация кампании (1-3 дня)",
+          "pos": [
+            290,
+            500
+          ],
+          "size": [
+            140,
+            80
+          ]
+        },
+        {
+          "id": "pPublish",
+          "type": "serviceTask",
+          "name": "Опубликовать кампанию в каталоге",
+          "pos": [
+            460,
+            500
+          ],
+          "size": [
+            150,
+            80
+          ]
+        },
+        {
+          "id": "pCollect",
+          "type": "serviceTask",
+          "name": "Накопление средств на счёте платформы",
+          "pos": [
+            640,
+            500
+          ],
+          "size": [
+            160,
+            80
+          ]
+        },
+        {
+          "id": "pCheck",
+          "type": "exclusiveGateway",
+          "name": "Собрана сумма Sgoal?",
+          "pos": [
+            920,
+            515
+          ],
+          "size": [
+            50,
+            50
+          ]
+        },
+        {
+          "id": "pTransfer",
+          "type": "serviceTask",
+          "name": "Перевести средства автору (14-30 дней, комиссия 5-15%)",
+          "pos": [
+            1020,
+            390
+          ],
+          "size": [
+            240,
+            80
+          ]
+        },
+        {
+          "id": "pEnd1",
+          "type": "endEvent",
+          "pos": [
+            1290,
+            412
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "pRefund",
+          "type": "serviceTask",
+          "name": "Вернуть средства инвесторам (задержка 14-30 дней)",
+          "pos": [
+            1020,
+            610
+          ],
+          "size": [
+            240,
+            80
+          ]
+        },
+        {
+          "id": "pEnd2",
+          "type": "endEvent",
+          "pos": [
+            1312,
+            632
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "pTimer",
+          "type": "intermediateCatchEvent",
+          "name": "30-60 дней",
+          "pos": [
+            842,
+            522
+          ],
+          "size": [
+            36,
+            36
+          ],
+          "trigger": "timer"
+        }
+      ],
+      "flows": [
+        {
+          "id": "Flow_p1",
+          "from": "pStart",
+          "to": "pModerate",
+          "waypoints": [
+            [
+              256,
+              540
+            ],
+            [
+              290,
+              540
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p2",
+          "from": "pModerate",
+          "to": "pPublish",
+          "waypoints": [
+            [
+              430,
+              540
+            ],
+            [
+              460,
+              540
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p3",
+          "from": "pPublish",
+          "to": "pCollect",
+          "waypoints": [
+            [
+              610,
+              540
+            ],
+            [
+              640,
+              540
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p4",
+          "from": "pCollect",
+          "to": "pTimer",
+          "waypoints": [
+            [
+              800,
+              540
+            ],
+            [
+              842,
+              540
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p5",
+          "from": "pTimer",
+          "to": "pCheck",
+          "waypoints": [
+            [
+              878,
+              540
+            ],
+            [
+              920,
+              540
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p6",
+          "from": "pCheck",
+          "to": "pTransfer",
+          "name": "Да",
+          "waypoints": [
+            [
+              945,
+              515
+            ],
+            [
+              945,
+              430
+            ],
+            [
+              1020,
+              430
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p8",
+          "from": "pCheck",
+          "to": "pRefund",
+          "name": "Нет",
+          "waypoints": [
+            [
+              945,
+              565
+            ],
+            [
+              945,
+              650
+            ],
+            [
+              1020,
+              650
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p7",
+          "from": "pTransfer",
+          "to": "pEnd1",
+          "waypoints": [
+            [
+              1260,
+              430
+            ],
+            [
+              1290,
+              430
+            ]
+          ]
+        },
+        {
+          "id": "Flow_p9",
+          "from": "pRefund",
+          "to": "pEnd2",
+          "waypoints": [
+            [
+              1260,
+              650
+            ],
+            [
+              1312,
+              650
+            ]
+          ]
+        }
+      ],
+      "annotations": []
+    },
+    {
+      "id": "Participant_Investor",
+      "name": "Инвестор",
+      "processId": "Process_Investor",
+      "bounds": [
+        160,
+        760,
+        1400,
+        240
+      ],
+      "elements": [
+        {
+          "id": "iStart",
+          "type": "startEvent",
+          "pos": [
+            220,
+            847
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "iBrowse",
+          "type": "userTask",
+          "name": "Просмотр каталога проектов",
+          "pos": [
+            290,
+            825
+          ],
+          "size": [
+            150,
+            80
+          ]
+        },
+        {
+          "id": "iPay",
+          "type": "userTask",
+          "name": "Оплата банковской картой",
+          "pos": [
+            470,
+            825
+          ],
+          "size": [
+            140,
+            80
+          ]
+        },
+        {
+          "id": "iWait",
+          "type": "eventBasedGateway",
+          "pos": [
+            660,
+            840
+          ],
+          "size": [
+            50,
+            50
+          ]
+        },
+        {
+          "id": "iRecvRefund",
+          "type": "intermediateCatchEvent",
+          "pos": [
+            802,
+            890
+          ],
+          "size": [
+            36,
+            36
+          ],
+          "trigger": "message"
+        },
+        {
+          "id": "iRecvSucc",
+          "type": "intermediateCatchEvent",
+          "pos": [
+            762,
+            808
+          ],
+          "size": [
+            36,
+            36
+          ],
+          "trigger": "message"
+        },
+        {
+          "id": "iRecvReward",
+          "type": "intermediateCatchEvent",
+          "pos": [
+            862,
+            808
+          ],
+          "size": [
+            36,
+            36
+          ],
+          "trigger": "message"
+        },
+        {
+          "id": "iEndSucc",
+          "type": "endEvent",
+          "pos": [
+            952,
+            808
+          ],
+          "size": [
+            36,
+            36
+          ]
+        },
+        {
+          "id": "iEndRefund",
+          "type": "endEvent",
+          "pos": [
+            902,
+            890
+          ],
+          "size": [
+            36,
+            36
+          ]
+        }
+      ],
+      "flows": [
+        {
+          "id": "Flow_i1",
+          "from": "iStart",
+          "to": "iBrowse",
+          "waypoints": [
+            [
+              256,
+              865
+            ],
+            [
+              290,
+              865
+            ]
+          ]
+        },
+        {
+          "id": "Flow_i2",
+          "from": "iBrowse",
+          "to": "iPay",
+          "waypoints": [
+            [
+              440,
+              865
+            ],
+            [
+              470,
+              865
+            ]
+          ]
+        },
+        {
+          "id": "Flow_i3",
+          "from": "iPay",
+          "to": "iWait",
+          "waypoints": [
+            [
+              610,
+              865
+            ],
+            [
+              660,
+              865
+            ]
+          ]
+        },
+        {
+          "id": "Flow_i4",
+          "from": "iWait",
+          "to": "iRecvSucc",
+          "waypoints": [
+            [
+              685,
+              840
+            ],
+            [
+              685,
+              826
+            ],
+            [
+              762,
+              826
+            ]
+          ]
+        },
+        {
+          "id": "Flow_i5",
+          "from": "iWait",
+          "to": "iRecvRefund",
+          "waypoints": [
+            [
+              685,
+              890
+            ],
+            [
+              685,
+              908
+            ],
+            [
+              802,
+              908
+            ]
+          ]
+        },
+        {
+          "id": "Flow_i7",
+          "from": "iRecvRefund",
+          "to": "iEndRefund",
+          "waypoints": [
+            [
+              838,
+              908
+            ],
+            [
+              902,
+              908
+            ]
+          ]
+        },
+        {
+          "id": "Flow_i6",
+          "from": "iRecvSucc",
+          "to": "iRecvReward",
+          "waypoints": [
+            [
+              798,
+              826
+            ],
+            [
+              862,
+              826
+            ]
+          ]
+        },
+        {
+          "id": "Flow_i8",
+          "from": "iRecvReward",
+          "to": "iEndSucc",
+          "waypoints": [
+            [
+              898,
+              826
+            ],
+            [
+              952,
+              826
+            ]
+          ]
+        }
+      ],
+      "annotations": []
+    }
+  ],
+  "messageFlows": [
+    {
+      "id": "MF_zayavka",
+      "from": "aSubmit",
+      "to": "pStart",
+      "name": "заявка",
+      "waypoints": [
+        [
+          530,
+          225
+        ],
+        [
+          530,
+          340
+        ],
+        [
+          238,
+          340
+        ],
+        [
+          238,
+          522
+        ]
+      ]
+    },
+    {
+      "id": "MF_oplata",
+      "from": "iPay",
+      "to": "pCollect",
+      "name": "оплата",
+      "waypoints": [
+        [
+          540,
+          825
+        ],
+        [
+          540,
+          740
+        ],
+        [
+          720,
+          740
+        ],
+        [
+          720,
+          580
+        ]
+      ]
+    },
+    {
+      "id": "MF_perevod",
+      "from": "pTransfer",
+      "to": "aRecvOk",
+      "name": "перевод",
+      "waypoints": [
+        [
+          1140,
+          390
+        ],
+        [
+          1140,
+          350
+        ],
+        [
+          778,
+          350
+        ],
+        [
+          778,
+          169
+        ]
+      ]
+    },
+    {
+      "id": "MF_success",
+      "from": "pTransfer",
+      "to": "iRecvSucc",
+      "name": "уведомл. успеха",
+      "waypoints": [
+        [
+          1140,
+          470
+        ],
+        [
+          1140,
+          500
+        ],
+        [
+          1460,
+          500
+        ],
+        [
+          1460,
+          745
+        ],
+        [
+          780,
+          745
+        ],
+        [
+          780,
+          808
+        ]
+      ]
+    },
+    {
+      "id": "MF_refundInv",
+      "from": "pRefund",
+      "to": "iRecvRefund",
+      "name": "refund",
+      "waypoints": [
+        [
+          1200,
+          690
+        ],
+        [
+          1200,
+          740
+        ],
+        [
+          820,
+          740
+        ],
+        [
+          820,
+          890
+        ]
+      ]
+    },
+    {
+      "id": "MF_failAuthor",
+      "from": "pRefund",
+      "to": "aRecvFail",
+      "name": "уведомл. отказа",
+      "waypoints": [
+        [
+          1250,
+          610
+        ],
+        [
+          1340,
+          610
+        ],
+        [
+          1340,
+          340
+        ],
+        [
+          899,
+          340
+        ],
+        [
+          899,
+          258
+        ]
+      ]
+    },
+    {
+      "id": "MF_reward",
+      "from": "aDeliverReward",
+      "to": "iRecvReward",
+      "name": "reward",
+      "waypoints": [
+        [
+          1325,
+          191
+        ],
+        [
+          1500,
+          191
+        ],
+        [
+          1500,
+          745
+        ],
+        [
+          880,
+          745
+        ],
+        [
+          880,
+          808
+        ]
+      ]
+    }
+  ]
+}

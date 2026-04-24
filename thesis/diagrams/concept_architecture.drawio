@@ -1,0 +1,113 @@
+<mxfile host="Electron" modified="2026-04-13T18:00:00.000Z" version="26.0.0">
+  <diagram id="concept" name="ConceptArch">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="650" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- User + Wallet -->
+        <mxCell id="userBlock" value="Пользователь" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=18;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="walletBlock" value="Кошелёк&#10;(MetaMask /&#10;WalletConnect)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=16;fontStyle=1;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="290" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow user → wallet -->
+        <mxCell id="arrUW" value="" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="120" y="250" as="sourcePoint" />
+            <mxPoint x="120" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Arrow wallet → web-interface -->
+        <mxCell id="arr1" value="" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="220" as="sourcePoint" />
+            <mxPoint x="290" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl1" value="браузер" style="text;html=1;fontSize=14;align=center;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="210" y="195" width="70" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Web interface -->
+        <mxCell id="webBg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="290" y="60" width="280" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="webTitle" value="Веб-интерфейс платформы" style="text;html=1;fontSize=18;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="300" y="70" width="260" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="w1" value="Каталог кампаний&#10;и аналитика" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="315" y="115" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w2" value="Создание и управление&#10;кампаниями" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="315" y="180" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w3" value="Интерфейс голосования&#10;по milestones" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="315" y="245" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w4" value="Агрегация on-chain&#10;данных (индексатор)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="315" y="310" width="230" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="w5" value="REST API + БД&#10;(метаданные, профили)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#6c8ebf;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="315" y="375" width="230" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows web → blockchain -->
+        <mxCell id="arr2" value="" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#333333;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="570" y="270" as="sourcePoint" />
+            <mxPoint x="660" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl2" value="RPC" style="text;html=1;fontSize=14;align=center;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="590" y="245" width="50" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow wallet → blockchain (direct signing) -->
+        <mxCell id="arrWB" value="" style="endArrow=classic;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="200" y="330" as="sourcePoint" />
+            <mxPoint x="660" y="330" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="250" y="330" />
+              <mxPoint x="250" y="530" />
+              <mxPoint x="660" y="530" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lblSign" value="подписание транзакций" style="text;html=1;fontSize=13;align=center;fontColor=#d6b656;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry x="350" y="505" width="200" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- Blockchain -->
+        <mxCell id="bcBg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="660" y="80" width="280" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="bcTitle" value="Блокчейн&#10;(смарт-контракты)" style="text;html=1;fontSize=18;fontStyle=1;align=center;fillColor=none;strokeColor=none;" vertex="1" parent="1">
+          <mxGeometry x="690" y="85" width="220" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="b1" value="CrowdFundFactory&#10;(создание кампаний)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="145" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b2" value="MilestoneEscrow&#10;(эскроу + голосование)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="210" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b3" value="CampaignToken&#10;(ERC-1155)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="275" width="220" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="b4" value="Реестр транзакций&#10;(on-chain история)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#82b366;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="690" y="340" width="220" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Key note -->
+        <mxCell id="note" value="Платформа не хранит средства:&#10;все активы на смарт-контракте" style="shape=note;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=2;align=center;size=14;" vertex="1" parent="1">
+          <mxGeometry x="690" y="410" width="220" height="55" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

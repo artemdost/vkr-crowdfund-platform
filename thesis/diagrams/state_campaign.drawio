@@ -1,0 +1,120 @@
+<mxfile host="app.diagrams.net" modified="2026-04-11T10:00:00.000Z" agent="Claude" version="24.0.0">
+  <diagram name="State: Campaign" id="state-campaign">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Title -->
+        <mxCell id="title" value="Диаграмма состояний: Жизненный цикл кампании" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=16;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <!-- Initial state -->
+        <mxCell id="init" value="" style="ellipse;html=1;shape=doubleCircle;whiteSpace=wrap;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="80" y="120" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <!-- Draft -->
+        <mxCell id="draft" value="Draft&#xa;(Черновик)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="180" y="105" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Moderation -->
+        <mxCell id="moderation" value="Moderation&#xa;(На модерации)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="105" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Collecting -->
+        <mxCell id="collecting" value="Collecting&#xa;(Сбор средств)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="105" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Executing -->
+        <mxCell id="executing" value="Executing&#xa;(Исполнение этапов)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="260" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Servicing -->
+        <mxCell id="servicing" value="Servicing&#xa;(Обслуживание выплат)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="410" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Completed -->
+        <mxCell id="completed" value="Completed&#xa;(Завершена)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="560" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Refunded -->
+        <mxCell id="refunded" value="Refunded&#xa;(Возврат)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="410" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Default -->
+        <mxCell id="default" value="Default&#xa;(Дефолт)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="400" y="560" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <!-- Final -->
+        <mxCell id="final" value="" style="ellipse;html=1;shape=doubleCircle;whiteSpace=wrap;aspect=fixed;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="870" y="575" width="30" height="30" as="geometry"/>
+        </mxCell>
+        <!-- Transitions -->
+        <mxCell id="t1" value="" style="endArrow=block;endFill=1;" edge="1" source="init" target="draft" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t2" value="Автор отправил&#xa;на модерацию" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="draft" target="moderation" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3" value="Одобрена,&#xa;контракт развёрнут" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="moderation" target="collecting" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t3b" value="Отклонена" style="endArrow=block;endFill=1;fontSize=10;dashed=1;" edge="1" source="moderation" target="draft" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="80"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t4" value="Sraised >= Sgoal" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="collecting" target="executing" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t5" value="Sraised &lt; Sgoal&#xa;по истечении Tcollect" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="collecting" target="refunded" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="260"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t6" value="Все milestones&#xa;одобрены" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="executing" target="servicing" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t6b" value="2 провала&#xa;голосования /&#xa;таймаут" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="executing" target="refunded" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="400" y="290"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t7" value="Все выплаты&#xa;завершены /&#xa;GROWTH тип" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="servicing" target="completed" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t8" value="Пропуск&#xa;выплаты" style="endArrow=block;endFill=1;fontSize=10;" edge="1" source="servicing" target="default" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t9" value="" style="endArrow=block;endFill=1;" edge="1" source="completed" target="final" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="t10" value="" style="endArrow=block;endFill=1;" edge="1" source="refunded" target="final" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="590"/>
+              <mxPoint x="120" y="700"/>
+              <mxPoint x="885" y="700"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t11" value="" style="endArrow=block;endFill=1;" edge="1" source="default" target="final" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="620"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- Note -->
+        <mxCell id="note1" value="Для GROWTH-токенов&#xa;Servicing пропускается&#xa;(нет выплат)" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;size=15;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="830" y="390" width="170" height="60" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

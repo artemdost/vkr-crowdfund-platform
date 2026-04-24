@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-gray-100 antialiased;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    min-height: 100vh;
+  }
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+  .gradient-text {
+    background: linear-gradient(to right, #818cf8, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .btn-primary {
+    @apply text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+    background: linear-gradient(to right, #4f46e5, #7c3aed);
+    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.25);
+  }
+  .btn-primary:hover {
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+  .btn-primary:disabled {
+    @apply opacity-50;
+    transform: none;
+  }
+  .btn-danger {
+    @apply text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300;
+    background: linear-gradient(to right, #dc2626, #e11d48);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.25);
+  }
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-gray-500 outline-none transition-all;
+  }
+  .input-field:focus {
+    @apply border-indigo-500 ring-2 ring-indigo-500/20;
+  }
+  .stat-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 relative overflow-hidden;
+  }
+  .stat-card::before {
+    content: "";
+    @apply absolute top-0 left-0 right-0 h-px;
+    background: linear-gradient(to right, transparent, rgba(99,102,241,0.5), transparent);
+  }
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
+  }
+  .badge-funding {
+    @apply bg-blue-500/20 text-blue-400 border border-blue-500/30;
+  }
+  .badge-active {
+    @apply bg-emerald-500/20 text-emerald-400 border border-emerald-500/30;
+  }
+  .badge-completed {
+    @apply bg-gray-500/20 text-gray-400 border border-gray-500/30;
+  }
+  .badge-failed {
+    @apply bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+  .shadow-glow {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+  }
+}

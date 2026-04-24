@@ -1,0 +1,58 @@
+{
+  "id": "TO_BE_L0",
+  "name": "BPMN TO-BE L0: платформа токенизированного инвестирования",
+  "pools": [
+    {
+      "id": "Participant_Process",
+      "name": "Процесс токенизированного фонда",
+      "processId": "Process_Main",
+      "bounds": [40, 80, 1720, 380],
+      "elements": [
+        {"id": "pStart",     "type": "startEvent",       "pos": [80, 202]},
+        {"id": "pCreate",    "type": "userTask",         "name": "Создать кампанию + milestones", "pos": [150, 180], "size": [180, 80]},
+        {"id": "pCollect",   "type": "serviceTask",      "name": "Собрать средства в эскроу (30-60 дней)", "pos": [370, 180], "size": [200, 80]},
+        {"id": "pGoal",      "type": "exclusiveGateway", "name": "Цель достигнута?", "pos": [620, 195]},
+        {"id": "pMerge",     "type": "exclusiveGateway", "pos": [720, 195]},
+        {"id": "pMilestone", "type": "userTask",         "name": "Выполнить этап i", "pos": [810, 180], "size": [160, 80]},
+        {"id": "pVote",      "type": "userTask",         "name": "Голосование инвесторов", "pos": [1010, 180], "size": [180, 80]},
+        {"id": "pUnlock",    "type": "serviceTask",      "name": "Разблокировать бюджет bi", "pos": [1230, 180], "size": [180, 80]},
+        {"id": "pLast",      "type": "exclusiveGateway", "name": "Последний этап?", "pos": [1450, 195]},
+        {"id": "pEndOk",     "type": "endEvent",         "pos": [1580, 202]},
+        {"id": "pRefundAll", "type": "serviceTask",      "name": "Автоматический refund инвесторам", "pos": [700, 90], "size": [180, 80]},
+        {"id": "pEndFail",   "type": "endEvent",         "pos": [910, 112]}
+      ],
+      "flows": [
+        {"id": "Flow_1",  "from": "pStart",     "to": "pCreate"},
+        {"id": "Flow_2",  "from": "pCreate",    "to": "pCollect"},
+        {"id": "Flow_3",  "from": "pCollect",   "to": "pGoal"},
+        {"id": "Flow_4",  "from": "pGoal",      "to": "pMerge", "name": "Да"},
+        {"id": "Flow_5",  "from": "pGoal",      "to": "pRefundAll", "name": "Нет", "exit": "top", "entry": "bottom"},
+        {"id": "Flow_6",  "from": "pRefundAll", "to": "pEndFail"},
+        {"id": "Flow_7",  "from": "pMerge",     "to": "pMilestone"},
+        {"id": "Flow_8",  "from": "pMilestone", "to": "pVote"},
+        {"id": "Flow_9",  "from": "pVote",      "to": "pUnlock"},
+        {"id": "Flow_10", "from": "pUnlock",    "to": "pLast"},
+        {"id": "Flow_11", "from": "pLast",      "to": "pEndOk", "name": "Да"},
+        {"id": "Flow_12", "from": "pLast",      "to": "pMerge", "name": "Нет (i<n)",
+         "waypoints": [[1475, 245], [1475, 390], [745, 390], [745, 245]]}
+      ],
+      "annotations": [
+        {
+          "id": "Ann_escrow",
+          "text": "Улучшение №1: средства в эскроу смарт-контракта, автор не получает всю сумму",
+          "target": "pCollect",
+          "pos": [370, 20],
+          "size": [280, 40]
+        },
+        {
+          "id": "Ann_voting",
+          "text": "Улучшение №2: голосование держателей токенов, разблокировка по этапам",
+          "target": "pVote",
+          "pos": [1010, 290],
+          "size": [260, 40]
+        }
+      ]
+    }
+  ],
+  "messageFlows": []
+}

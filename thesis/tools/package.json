@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bpmn-to-image": "^0.10.0",
+    "chokidar-cli": "^3.0.0",
+    "bpmnlint": "^11.12.0"
+  }
+}

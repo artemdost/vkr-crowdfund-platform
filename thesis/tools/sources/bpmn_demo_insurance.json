@@ -1,0 +1,139 @@
+{
+  "id": "DEMO_INSURANCE_CLAIM",
+  "name": "Обработка страхового требования (demo)",
+  "pools": [
+    {
+      "id": "Participant_Client",
+      "name": "Клиент",
+      "processId": "Process_Client",
+      "bounds": [160, 80, 1720, 160],
+      "elements": [
+        {"id": "cStart",      "type": "startEvent", "pos": [220, 152]},
+        {"id": "cFillClaim",  "type": "userTask",   "name": "Заполнить заявление", "pos": [290, 130], "size": [150, 80]},
+        {"id": "cAttachDocs", "type": "userTask",   "name": "Приложить документы", "pos": [470, 130], "size": [150, 80]},
+        {"id": "cReceive",    "type": "intermediateCatchEvent", "trigger": "message", "name": "Решение", "pos": [1500, 152]},
+        {"id": "cEnd",        "type": "endEvent",   "pos": [1620, 152]}
+      ],
+      "flows": [
+        {"id": "Flow_c1", "from": "cStart",      "to": "cFillClaim"},
+        {"id": "Flow_c2", "from": "cFillClaim",  "to": "cAttachDocs"},
+        {"id": "Flow_c3", "from": "cAttachDocs", "to": "cReceive",
+         "waypoints": [[620, 170], [1500, 170]]},
+        {"id": "Flow_c4", "from": "cReceive",    "to": "cEnd"}
+      ],
+      "annotations": [
+        {"id": "Ann_client", "text": "Клиент узнаёт решение только после всей обработки",
+         "target": "cReceive", "pos": [1440, 20], "size": [280, 30]}
+      ]
+    },
+    {
+      "id": "Participant_Agent",
+      "name": "Агент (front-office)",
+      "processId": "Process_Agent",
+      "bounds": [160, 280, 1720, 320],
+      "elements": [
+        {"id": "aStart",        "type": "startEvent", "trigger": "message", "pos": [220, 502]},
+        {"id": "aValidate",     "type": "userTask",   "name": "Первичная проверка заявления", "pos": [290, 480], "size": [170, 80]},
+        {"id": "aCompleteness", "type": "exclusiveGateway", "name": "Документы полны?", "pos": [500, 495]},
+        {"id": "aRequestMore",  "type": "sendTask",   "name": "Запросить недостающие", "pos": [570, 340], "size": [170, 80]},
+        {"id": "aRegister",     "type": "serviceTask","name": "Зарегистрировать в CRM", "pos": [590, 480], "size": [170, 80]},
+        {"id": "aNotify",       "type": "sendTask",   "name": "Уведомить клиента", "pos": [1420, 480], "size": [150, 80]},
+        {"id": "aEnd",          "type": "endEvent",   "pos": [1620, 502]}
+      ],
+      "flows": [
+        {"id": "Flow_a1", "from": "aStart",        "to": "aValidate"},
+        {"id": "Flow_a2", "from": "aValidate",     "to": "aCompleteness"},
+        {"id": "Flow_a3", "from": "aCompleteness", "to": "aRegister",    "name": "Да"},
+        {"id": "Flow_a4", "from": "aCompleteness", "to": "aRequestMore", "name": "Нет",
+         "waypoints": [[525, 495], [525, 380], [570, 380]]},
+        {"id": "Flow_a5", "from": "aRequestMore",  "to": "aValidate",
+         "waypoints": [[655, 420], [655, 450], [375, 450], [375, 480]]},
+        {"id": "Flow_a6", "from": "aRegister",     "to": "aNotify",
+         "waypoints": [[760, 520], [1420, 520]]},
+        {"id": "Flow_a7", "from": "aNotify",       "to": "aEnd"}
+      ],
+      "annotations": [
+        {"id": "Ann_loop", "text": "Если документов не хватает: запрос клиенту и повтор проверки",
+         "target": "aRequestMore", "pos": [780, 340], "size": [300, 30]}
+      ]
+    },
+    {
+      "id": "Participant_Underwriter",
+      "name": "Андеррайтер",
+      "processId": "Process_Underwriter",
+      "bounds": [160, 640, 1720, 340],
+      "elements": [
+        {"id": "uStart",      "type": "startEvent", "trigger": "message", "pos": [220, 802]},
+        {"id": "uAssess",     "type": "userTask",   "name": "Оценка рисков", "pos": [290, 780], "size": [150, 80]},
+        {"id": "uParallel1",  "type": "parallelGateway", "pos": [480, 795]},
+        {"id": "uCheckFraud", "type": "serviceTask","name": "Анти-фрод проверка", "pos": [560, 680], "size": [160, 80]},
+        {"id": "uCheckHist",  "type": "serviceTask","name": "История клиента", "pos": [560, 880], "size": [160, 80]},
+        {"id": "uParallel2",  "type": "parallelGateway", "pos": [770, 795]},
+        {"id": "uExpert",     "type": "userTask",   "name": "Экспертиза", "pos": [850, 780], "size": [150, 80]},
+        {"id": "uTimer",      "type": "intermediateCatchEvent", "trigger": "timer", "name": "SLA 5 дней", "pos": [1040, 802]},
+        {"id": "uDecision",   "type": "exclusiveGateway", "name": "Одобрить?", "pos": [1120, 795]},
+        {"id": "uApprove",    "type": "serviceTask","name": "Рассчитать выплату", "pos": [1220, 680], "size": [170, 80]},
+        {"id": "uReject",     "type": "serviceTask","name": "Сформировать отказ", "pos": [1220, 880], "size": [170, 80]},
+        {"id": "uMerge",      "type": "exclusiveGateway", "pos": [1440, 795]},
+        {"id": "uEnd",        "type": "endEvent",   "pos": [1540, 802]}
+      ],
+      "flows": [
+        {"id": "Flow_u1",  "from": "uStart",      "to": "uAssess"},
+        {"id": "Flow_u2",  "from": "uAssess",     "to": "uParallel1"},
+        {"id": "Flow_u3",  "from": "uParallel1",  "to": "uCheckFraud",
+         "waypoints": [[505, 795], [505, 720], [560, 720]]},
+        {"id": "Flow_u4",  "from": "uParallel1",  "to": "uCheckHist",
+         "waypoints": [[505, 845], [505, 920], [560, 920]]},
+        {"id": "Flow_u5",  "from": "uCheckFraud", "to": "uParallel2",
+         "waypoints": [[720, 720], [795, 720], [795, 795]]},
+        {"id": "Flow_u6",  "from": "uCheckHist",  "to": "uParallel2",
+         "waypoints": [[720, 920], [795, 920], [795, 845]]},
+        {"id": "Flow_u7",  "from": "uParallel2",  "to": "uExpert"},
+        {"id": "Flow_u8",  "from": "uExpert",     "to": "uTimer"},
+        {"id": "Flow_u9",  "from": "uTimer",      "to": "uDecision"},
+        {"id": "Flow_u10", "from": "uDecision",   "to": "uApprove",
+         "name": "Да", "waypoints": [[1145, 795], [1145, 720], [1220, 720]]},
+        {"id": "Flow_u11", "from": "uDecision",   "to": "uReject",
+         "name": "Нет", "waypoints": [[1145, 845], [1145, 920], [1220, 920]]},
+        {"id": "Flow_u12", "from": "uApprove",    "to": "uMerge",
+         "waypoints": [[1390, 720], [1465, 720], [1465, 795]]},
+        {"id": "Flow_u13", "from": "uReject",     "to": "uMerge",
+         "waypoints": [[1390, 920], [1465, 920], [1465, 845]]},
+        {"id": "Flow_u14", "from": "uMerge",      "to": "uEnd"}
+      ],
+      "annotations": [
+        {"id": "Ann_parallel", "text": "Параллельно: фрод и история",
+         "target": "uParallel1", "pos": [380, 650], "size": [260, 25]}
+      ]
+    },
+    {
+      "id": "Participant_Finance",
+      "name": "Финансовый отдел",
+      "processId": "Process_Finance",
+      "bounds": [160, 1020, 1720, 160],
+      "elements": [
+        {"id": "fStart", "type": "startEvent", "trigger": "message", "pos": [1240, 1082]},
+        {"id": "fPay",   "type": "serviceTask","name": "Выполнить выплату", "pos": [1310, 1060], "size": [150, 80]},
+        {"id": "fEnd",   "type": "endEvent",   "pos": [1490, 1082]}
+      ],
+      "flows": [
+        {"id": "Flow_f1", "from": "fStart", "to": "fPay"},
+        {"id": "Flow_f2", "from": "fPay",   "to": "fEnd"}
+      ]
+    }
+  ],
+  "messageFlows": [
+    {"id": "MF_submit",   "from": "cAttachDocs", "to": "aStart", "name": "заявление",
+     "waypoints": [[545, 210], [545, 260], [238, 260], [238, 502]]},
+    {"id": "MF_more",     "from": "aRequestMore", "to": "cReceive", "name": "запрос документов",
+     "waypoints": [[655, 340], [655, 230], [1480, 230], [1480, 170], [1500, 188]]},
+    {"id": "MF_toUW",     "from": "aRegister", "to": "uStart", "name": "дело в андеррайтинг",
+     "waypoints": [[675, 560], [675, 620], [238, 620], [238, 802]]},
+    {"id": "MF_toFinance","from": "uApprove",  "to": "fStart", "name": "к выплате",
+     "waypoints": [[1305, 760], [1305, 790], [1420, 790], [1420, 1000], [1258, 1000], [1258, 1082]]},
+    {"id": "MF_decision", "from": "aNotify",   "to": "cReceive", "name": "решение",
+     "waypoints": [[1495, 480], [1556, 480], [1556, 170], [1536, 188]]},
+    {"id": "MF_paid",     "from": "fPay",      "to": "cReceive", "name": "выплачено",
+     "waypoints": [[1385, 1060], [1385, 1010], [1600, 1010], [1600, 260], [1518, 260], [1518, 188]]}
+  ]
+}

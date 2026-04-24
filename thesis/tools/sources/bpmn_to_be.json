@@ -1,0 +1,188 @@
+{
+  "id": "TO_BE",
+  "name": "BPMN TO-BE: токенизированный фонд коллективного инвестирования",
+  "pools": [
+    {
+      "id": "Participant_Author",
+      "name": "Автор проекта",
+      "processId": "Process_Author",
+      "bounds": [160, 80, 2500, 200],
+      "elements": [
+        {"id": "aStart",        "type": "startEvent",      "pos": [220, 152]},
+        {"id": "aCreate",       "type": "userTask",         "name": "Создать кампанию + milestones", "pos": [280, 130], "size": [160, 80]},
+        {"id": "gwAuthorMerge", "type": "exclusiveGateway", "pos": [1310, 145]},
+        {"id": "aWork",         "type": "userTask",         "name": "Работа над этапом i",           "pos": [1390, 130]},
+        {"id": "aReport",       "type": "userTask",         "name": "Подать отчёт submitMilestone()", "pos": [1560, 130], "size": [170, 80]},
+        {"id": "gwAuthorEvt",   "type": "eventBasedGateway","pos": [1800, 145]},
+        {"id": "aMsgCatch",     "type": "intermediateCatchEvent", "trigger": "message", "name": "bi получен", "pos": [1900, 152]},
+        {"id": "aSignalCatch",  "type": "intermediateCatchEvent", "trigger": "signal", "signalRef": "Signal_CampaignFailed", "name": "Отказ", "pos": [1807, 215]},
+        {"id": "aReceive",      "type": "userTask",         "name": "Получить бюджет bi",            "pos": [1970, 130]},
+        {"id": "gwAuthorLoop",  "type": "exclusiveGateway", "name": "Последний этап?",               "pos": [2140, 145]},
+        {"id": "aEnd",          "type": "endEvent",         "pos": [2230, 152]},
+        {"id": "aEndFail",      "type": "endEvent",         "pos": [1950, 215]}
+      ],
+      "flows": [
+        {"id": "Flow_a1",    "from": "aStart",        "to": "aCreate"},
+        {"id": "Flow_a1b",   "from": "aCreate",       "to": "gwAuthorMerge"},
+        {"id": "Flow_a_mrg", "from": "gwAuthorMerge", "to": "aWork"},
+        {"id": "Flow_a2",    "from": "aWork",         "to": "aReport"},
+        {"id": "Flow_a2b",   "from": "aReport",       "to": "gwAuthorEvt"},
+        {"id": "Flow_a_evt1","from": "gwAuthorEvt",   "to": "aMsgCatch"},
+        {"id": "Flow_a_evt2","from": "gwAuthorEvt",   "to": "aSignalCatch", "exit": "bottom", "entry": "top"},
+        {"id": "Flow_a_msg", "from": "aMsgCatch",     "to": "aReceive"},
+        {"id": "Flow_a_fail","from": "aSignalCatch",  "to": "aEndFail"},
+        {"id": "Flow_a3",    "from": "aReceive",      "to": "gwAuthorLoop"},
+        {"id": "Flow_a3b",   "from": "gwAuthorLoop",  "to": "aEnd",          "name": "Да (i = n)"},
+        {"id": "Flow_a3c",   "from": "gwAuthorLoop",  "to": "gwAuthorMerge", "name": "Нет (i < n)",
+         "waypoints": [[2165, 145], [2165, 105], [1335, 105], [1335, 145]]}
+      ],
+      "annotations": []
+    },
+    {
+      "id": "Participant_Platform",
+      "name": "Платформа",
+      "processId": "Process_Platform",
+      "bounds": [160, 300, 2500, 190],
+      "elements": [
+        {"id": "pStart",      "type": "startEvent",      "trigger": "message", "pos": [342, 372]},
+        {"id": "pModerate",   "type": "userTask",         "name": "Модерация кампании (1-3 дня)", "pos": [400, 350]},
+        {"id": "pPublish",    "type": "serviceTask",      "name": "Опубликовать кампанию",        "pos": [580, 350]},
+        {"id": "gwPlatMerge", "type": "exclusiveGateway", "pos": [1670, 365]},
+        {"id": "pVerify",     "type": "userTask",         "name": "Верифицировать формат отчёта",  "pos": [1750, 350], "size": [150, 80]},
+        {"id": "pBoundarySignal","type": "boundaryEvent", "trigger": "signal", "signalRef": "Signal_CampaignFailed", "attachedToRef": "pVerify", "name": "Отказ", "pos": [1807, 412]},
+        {"id": "pStartVote",  "type": "serviceTask",      "name": "startVoting()",                "pos": [1930, 350]},
+        {"id": "gwPlatLoop",  "type": "exclusiveGateway", "name": "Последний этап?",              "pos": [2100, 365]},
+        {"id": "pEnd",        "type": "endEvent",         "pos": [2180, 372]},
+        {"id": "pEndFail",    "type": "endEvent",         "pos": [1870, 440]}
+      ],
+      "flows": [
+        {"id": "Flow_p1",    "from": "pStart",      "to": "pModerate"},
+        {"id": "Flow_p2",    "from": "pModerate",   "to": "pPublish"},
+        {"id": "Flow_p3",    "from": "pPublish",    "to": "gwPlatMerge"},
+        {"id": "Flow_p_mrg", "from": "gwPlatMerge", "to": "pVerify"},
+        {"id": "Flow_p4",    "from": "pVerify",     "to": "pStartVote"},
+        {"id": "Flow_p5",    "from": "pStartVote",  "to": "gwPlatLoop"},
+        {"id": "Flow_p5b",   "from": "gwPlatLoop",  "to": "pEnd",        "name": "Да (i = n)"},
+        {"id": "Flow_p5c",   "from": "gwPlatLoop",  "to": "gwPlatMerge", "name": "Нет (i < n)",
+         "waypoints": [[2125, 365], [2125, 315], [1695, 315], [1695, 365]]},
+        {"id": "Flow_p_bfail","from": "pBoundarySignal", "to": "pEndFail"}
+      ],
+      "annotations": []
+    },
+    {
+      "id": "Participant_SC",
+      "name": "Смарт-контракт CrowdFund",
+      "processId": "Process_SC",
+      "bounds": [160, 510, 2500, 320],
+      "elements": [
+        {"id": "scStart",    "type": "startEvent",            "trigger": "message", "pos": [452, 577]},
+        {"id": "scDeploy",   "type": "serviceTask",           "name": "Развернуть CrowdFund в блокчейне",     "pos": [520, 555]},
+        {"id": "scMint",     "type": "serviceTask",           "name": "invest(): _mint токенов, эскроу средств", "pos": [700, 555], "size": [150, 80]},
+        {"id": "scTimer",    "type": "intermediateCatchEvent","trigger": "timer", "name": "30-60 дней",       "pos": [870, 577]},
+        {"id": "scGoal",     "type": "exclusiveGateway",      "name": "Sraised >= Sgoal?",                    "pos": [940, 570]},
+        {"id": "gwSCMerge",  "type": "exclusiveGateway",      "pos": [2010, 570]},
+        {"id": "scFinish",   "type": "serviceTask",           "name": "finishVoting(): V_total, Q, A",        "pos": [2090, 555], "size": [160, 80]},
+        {"id": "scQuorum",   "type": "exclusiveGateway",      "name": "Q >= 10% и A > 50%?",                  "pos": [2270, 570]},
+        {"id": "scTransfer", "type": "serviceTask",           "name": "transfer(author, bi); currentMilestone++", "pos": [2340, 555], "size": [160, 80]},
+        {"id": "gwSCLoop",   "type": "exclusiveGateway",      "name": "Последний этап?",                      "pos": [2530, 570]},
+        {"id": "scEndOk",    "type": "endEvent",              "pos": [2610, 577]},
+        {"id": "scRefund1",  "type": "serviceTask",           "name": "refund_all() при провале сбора",       "pos": [885, 730], "size": [160, 60]},
+        {"id": "scEndFail1", "type": "endEvent",              "trigger": "signal", "signalRef": "Signal_CampaignFailed", "pos": [1100, 742]},
+        {"id": "scRefund2",  "type": "serviceTask",           "name": "refund() при провале голосования",     "pos": [2210, 730], "size": [170, 60]},
+        {"id": "scEndFail2", "type": "endEvent",              "trigger": "signal", "signalRef": "Signal_CampaignFailed", "pos": [2450, 742]}
+      ],
+      "flows": [
+        {"id": "Flow_s1",    "from": "scStart",    "to": "scDeploy"},
+        {"id": "Flow_s2",    "from": "scDeploy",   "to": "scMint"},
+        {"id": "Flow_s3",    "from": "scMint",     "to": "scTimer"},
+        {"id": "Flow_s4",    "from": "scTimer",    "to": "scGoal"},
+        {"id": "Flow_s5",    "from": "scGoal",     "to": "gwSCMerge",   "name": "Да"},
+        {"id": "Flow_s_mrg", "from": "gwSCMerge",  "to": "scFinish"},
+        {"id": "Flow_s6",    "from": "scFinish",   "to": "scQuorum"},
+        {"id": "Flow_s7",    "from": "scQuorum",   "to": "scTransfer",  "name": "Да"},
+        {"id": "Flow_s7b",   "from": "scTransfer", "to": "gwSCLoop"},
+        {"id": "Flow_s7c",   "from": "gwSCLoop",   "to": "scEndOk",     "name": "Да (i = n)"},
+        {"id": "Flow_s7d",   "from": "gwSCLoop",   "to": "gwSCMerge",   "name": "Нет (i < n)",
+         "waypoints": [[2555, 570], [2555, 535], [2035, 535], [2035, 570]]},
+        {"id": "Flow_s8",    "from": "scGoal",     "to": "scRefund1",   "name": "Нет", "exit": "bottom", "entry": "top"},
+        {"id": "Flow_s9",    "from": "scRefund1",  "to": "scEndFail1"},
+        {"id": "Flow_s10",   "from": "scQuorum",   "to": "scRefund2",   "name": "Нет (после 2 попыток)", "exit": "bottom", "entry": "top"},
+        {"id": "Flow_s11",   "from": "scRefund2",  "to": "scEndFail2"}
+      ],
+      "annotations": [
+        {
+          "id": "Ann_escrow",
+          "text": "Улучшение №1: Эскроу — средства заблокированы в смарт-контракте",
+          "target": "scMint",
+          "pos": [640, 655], "size": [310, 55]
+        },
+        {
+          "id": "Ann_gas",
+          "text": "Улучшение №4: Только газ ~2-3% вместо комиссии 8-15% Web2",
+          "target": "scTransfer",
+          "pos": [2300, 655], "size": [310, 55]
+        }
+      ]
+    },
+    {
+      "id": "Participant_Investor",
+      "name": "Инвестор",
+      "processId": "Process_Investor",
+      "bounds": [160, 850, 2500, 190],
+      "elements": [
+        {"id": "iStart",      "type": "startEvent", "pos": [452, 922]},
+        {"id": "iKYC",        "type": "userTask",   "name": "Пройти KYC, просмотр каталога",    "pos": [520, 900], "size": [150, 80]},
+        {"id": "iInvest",     "type": "userTask",   "name": "Внести средства, получить токены", "pos": [700, 900], "size": [150, 80]},
+        {"id": "gwInvMerge",  "type": "exclusiveGateway", "pos": [1850, 915]},
+        {"id": "gwInvEvt",    "type": "eventBasedGateway", "pos": [1920, 915]},
+        {"id": "iMsgCatch",   "type": "intermediateCatchEvent", "trigger": "message", "name": "уведомление", "pos": [1982, 922]},
+        {"id": "iSignalCatch","type": "intermediateCatchEvent", "trigger": "signal", "signalRef": "Signal_CampaignFailed", "name": "Отказ", "pos": [1927, 975]},
+        {"id": "iVote",       "type": "userTask",   "name": "Проголосовать за этап",            "pos": [2080, 900]},
+        {"id": "gwInvLoop",   "type": "exclusiveGateway", "name": "Последний этап?",            "pos": [2250, 915]},
+        {"id": "iEnd",        "type": "endEvent",   "pos": [2340, 922]},
+        {"id": "iEndFail",    "type": "endEvent",   "pos": [2070, 975]}
+      ],
+      "flows": [
+        {"id": "Flow_i1",    "from": "iStart",     "to": "iKYC"},
+        {"id": "Flow_i2",    "from": "iKYC",       "to": "iInvest"},
+        {"id": "Flow_i2b",   "from": "iInvest",    "to": "gwInvMerge"},
+        {"id": "Flow_i_mrg", "from": "gwInvMerge", "to": "gwInvEvt"},
+        {"id": "Flow_i_evt1","from": "gwInvEvt",   "to": "iMsgCatch"},
+        {"id": "Flow_i_evt2","from": "gwInvEvt",   "to": "iSignalCatch", "exit": "bottom", "entry": "top"},
+        {"id": "Flow_i_msg", "from": "iMsgCatch",  "to": "iVote"},
+        {"id": "Flow_i_fail","from": "iSignalCatch","to": "iEndFail"},
+        {"id": "Flow_i3",    "from": "iVote",      "to": "gwInvLoop"},
+        {"id": "Flow_i3b",   "from": "gwInvLoop",  "to": "iEnd",        "name": "Да (i = n)"},
+        {"id": "Flow_i3c",   "from": "gwInvLoop",  "to": "gwInvMerge",  "name": "Нет (i < n)",
+         "waypoints": [[2275, 915], [2275, 875], [1875, 875], [1875, 915]]}
+      ],
+      "annotations": [
+        {
+          "id": "Ann_tokens",
+          "text": "Улучшение №3: Токены ERC-1155, вторичный рынок — инвестор может выйти",
+          "target": "iInvest",
+          "pos": [620, 990], "size": [340, 55]
+        },
+        {
+          "id": "Ann_voting",
+          "text": "Улучшение №2: Голосование держателей токенов = контроль расходов на каждом этапе",
+          "target": "iVote",
+          "pos": [1990, 990], "size": [360, 55]
+        }
+      ]
+    }
+  ],
+  "messageFlows": [
+    {"id": "MF_zayavka",    "name": "заявка",                        "from": "aCreate",     "to": "pStart"},
+    {"id": "MF_deploy",     "name": "deploy",                        "from": "pModerate",   "to": "scStart"},
+    {"id": "MF_invest",     "name": "invest()",                      "from": "iInvest",     "to": "scMint"},
+    {"id": "MF_voteNotify", "name": "уведомление о голосовании",     "from": "pStartVote",  "to": "iMsgCatch"},
+    {"id": "MF_vote",       "name": "vote()",                        "from": "iVote",       "to": "scFinish",
+     "waypoints": [[2150, 900], [2170, 900], [2170, 635]]},
+    {"id": "MF_bi",         "name": "bi (бюджет этапа)",             "from": "scTransfer",  "to": "aMsgCatch",
+     "waypoints": [[2420, 555], [2420, 170], [1918, 170]]}
+  ],
+  "signals": [
+    {"id": "Signal_CampaignFailed", "name": "CampaignFailed"}
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "id": "TO_BE_L1",
+  "name": "BPMN TO-BE L1: платформа токенизированного инвестирования",
+  "pools": [
+    {
+      "id": "Participant_Author",
+      "name": "Автор проекта",
+      "processId": "Process_Author",
+      "bounds": [160, 80, 1400, 180],
+      "elements": [
+        {"id": "aStart",   "type": "startEvent", "pos": [220, 152]},
+        {"id": "aPrepare", "type": "userTask",   "name": "Подготовить описание + milestones", "pos": [280, 130], "size": [140, 80]},
+        {"id": "aSubmit",  "type": "userTask",   "name": "Подать заявку на платформу", "pos": [450, 130], "size": [150, 80]},
+        {"id": "aWork",    "type": "userTask",   "name": "Выполнить работу этапа", "pos": [640, 130], "size": [170, 80]},
+        {"id": "aReport",  "type": "userTask",   "name": "Опубликовать отчёт по этапу", "pos": [850, 130], "size": [170, 80]},
+        {"id": "aLast",    "type": "exclusiveGateway", "name": "Последний этап?", "pos": [1060, 145]},
+        {"id": "aEndOk",   "type": "endEvent",   "pos": [1160, 152]}
+      ],
+      "flows": [
+        {"id": "Flow_a1", "from": "aStart",   "to": "aPrepare"},
+        {"id": "Flow_a2", "from": "aPrepare", "to": "aSubmit"},
+        {"id": "Flow_a3", "from": "aSubmit",  "to": "aWork"},
+        {"id": "Flow_a4", "from": "aWork",    "to": "aReport"},
+        {"id": "Flow_a5", "from": "aReport",  "to": "aLast"},
+        {"id": "Flow_a6", "from": "aLast",    "to": "aEndOk", "name": "Да"},
+        {"id": "Flow_a7", "from": "aLast",    "to": "aWork",  "name": "Нет (i<n)",
+         "waypoints": [[1085, 195], [1085, 235], [725, 235], [725, 210]]}
+      ],
+      "annotations": [
+        {"id": "Ann_gain1",
+         "text": "Улучшение №1: средства поэтапно, только после голосования",
+         "target": "aWork",
+         "pos": [640, 20], "size": [260, 40]}
+      ]
+    },
+    {
+      "id": "Participant_Platform",
+      "name": "Платформа (Web2-фасад)",
+      "processId": "Process_Platform",
+      "bounds": [160, 300, 1400, 180],
+      "elements": [
+        {"id": "pStart",    "type": "startEvent",  "trigger": "message", "pos": [220, 372]},
+        {"id": "pModerate", "type": "userTask",    "name": "Модерация кампании (1-3 дня)", "pos": [290, 350], "size": [150, 80]},
+        {"id": "pPublish",  "type": "serviceTask", "name": "Опубликовать в каталоге",      "pos": [460, 350], "size": [150, 80]},
+        {"id": "pDeploy",   "type": "serviceTask", "name": "Развернуть CrowdFund",         "pos": [640, 350], "size": [160, 80]},
+        {"id": "pEnd",      "type": "endEvent",    "pos": [830, 372]}
+      ],
+      "flows": [
+        {"id": "Flow_p1", "from": "pStart",    "to": "pModerate"},
+        {"id": "Flow_p2", "from": "pModerate", "to": "pPublish"},
+        {"id": "Flow_p3", "from": "pPublish",  "to": "pDeploy"},
+        {"id": "Flow_p4", "from": "pDeploy",   "to": "pEnd"}
+      ],
+      "annotations": [
+        {"id": "Ann_gain4",
+         "text": "Улучшение №4: устранение оператора — издержки только на газ в L2-сети",
+         "target": "pDeploy",
+         "pos": [620, 265], "size": [280, 30]}
+      ]
+    },
+    {
+      "id": "Participant_SmartContract",
+      "name": "Смарт-контракт CrowdFund",
+      "processId": "Process_SmartContract",
+      "bounds": [160, 520, 1400, 360],
+      "elements": [
+        {"id": "scStart",    "type": "startEvent",       "trigger": "message", "pos": [220, 622]},
+        {"id": "scMint",     "type": "serviceTask",      "name": "invest(): mint ERC-1155 токенов", "pos": [290, 600], "size": [160, 80]},
+        {"id": "scTimer",    "type": "intermediateCatchEvent", "trigger": "timer", "name": "30-60 дней", "pos": [480, 622]},
+        {"id": "scGoal",     "type": "exclusiveGateway", "name": "Sraised >= Sgoal?", "pos": [550, 615]},
+        {"id": "scVoting",   "type": "serviceTask",      "name": "Голосование по этапу", "pos": [640, 600], "size": [160, 80]},
+        {"id": "scApproved", "type": "exclusiveGateway", "name": "Одобрено (>50%, Q>=10%)?", "pos": [830, 615]},
+        {"id": "scUnlock",   "type": "serviceTask",      "name": "Разблокировать bi автору", "pos": [920, 600], "size": [170, 80]},
+        {"id": "scLast",     "type": "exclusiveGateway", "name": "Последний этап?", "pos": [1120, 615]},
+        {"id": "scEndOk",    "type": "endEvent",         "pos": [1210, 622]},
+        {"id": "scRefund",   "type": "serviceTask",      "name": "Возврат средств инвесторам", "pos": [640, 780], "size": [180, 80]},
+        {"id": "scEndFail",  "type": "endEvent",         "pos": [860, 802]}
+      ],
+      "flows": [
+        {"id": "Flow_sc1", "from": "scStart",    "to": "scMint"},
+        {"id": "Flow_sc2", "from": "scMint",     "to": "scTimer"},
+        {"id": "Flow_sc3", "from": "scTimer",    "to": "scGoal"},
+        {"id": "Flow_sc4", "from": "scGoal",     "to": "scVoting",   "name": "Да"},
+        {"id": "Flow_sc5", "from": "scGoal",     "to": "scRefund",   "name": "Нет",
+         "waypoints": [[575, 665], [575, 760], [730, 760], [730, 780]]},
+        {"id": "Flow_sc6", "from": "scVoting",   "to": "scApproved"},
+        {"id": "Flow_sc7", "from": "scApproved", "to": "scUnlock",   "name": "Да"},
+        {"id": "Flow_sc8", "from": "scApproved", "to": "scRefund",   "name": "Нет",
+         "waypoints": [[855, 665], [855, 760], [730, 760], [730, 780]]},
+        {"id": "Flow_sc9", "from": "scUnlock",   "to": "scLast"},
+        {"id": "Flow_sc10","from": "scLast",    "to": "scEndOk",    "name": "Да"},
+        {"id": "Flow_sc11","from": "scLast",    "to": "scVoting",   "name": "Нет (i<n)",
+         "waypoints": [[1145, 615], [1145, 500], [720, 500], [720, 600]]},
+        {"id": "Flow_sc12","from": "scRefund",  "to": "scEndFail"}
+      ],
+      "annotations": [
+        {"id": "Ann_gain2",
+         "text": "Улучшение №2: on-chain голосование, каждый токен = голос",
+         "target": "scVoting",
+         "pos": [640, 540], "size": [260, 30]}
+      ]
+    },
+    {
+      "id": "Participant_Investor",
+      "name": "Инвестор",
+      "processId": "Process_Investor",
+      "bounds": [160, 920, 1400, 160],
+      "elements": [
+        {"id": "iStart",  "type": "startEvent", "pos": [220, 982]},
+        {"id": "iKYC",    "type": "userTask",   "name": "Пройти KYC, подключить кошелёк",  "pos": [290, 960], "size": [160, 80]},
+        {"id": "iInvest", "type": "userTask",   "name": "Инвестировать: получить токены ERC-1155", "pos": [470, 960], "size": [200, 80]},
+        {"id": "iVote",   "type": "userTask",   "name": "Голосовать за каждый milestone",  "pos": [690, 960], "size": [180, 80]},
+        {"id": "iEnd",    "type": "endEvent",   "pos": [890, 982]}
+      ],
+      "flows": [
+        {"id": "Flow_i1", "from": "iStart",  "to": "iKYC"},
+        {"id": "Flow_i2", "from": "iKYC",    "to": "iInvest"},
+        {"id": "Flow_i3", "from": "iInvest", "to": "iVote"},
+        {"id": "Flow_i4", "from": "iVote",   "to": "iEnd"}
+      ],
+      "annotations": [
+        {"id": "Ann_gain3",
+         "text": "Улучшение №3: ERC-1155 токены на вторичном рынке (DEX) — выход в любой момент",
+         "target": "iInvest",
+         "pos": [470, 1060], "size": [280, 35]}
+      ]
+    }
+  ],
+  "messageFlows": [
+    {"id": "MF_submit",  "from": "aSubmit",   "to": "pStart",        "name": "заявка",
+     "waypoints": [[535, 210], [535, 280], [238, 280], [238, 372]]},
+    {"id": "MF_deploy",  "from": "pDeploy",   "to": "scStart",       "name": "deploy",
+     "waypoints": [[720, 430], [720, 500], [238, 500], [238, 622]]},
+    {"id": "MF_invest",  "from": "iInvest",   "to": "scMint",        "name": "invest()",
+     "waypoints": [[570, 960], [570, 900], [370, 900], [370, 680]]},
+    {"id": "MF_vote",    "from": "iVote",     "to": "scVoting",      "name": "vote()",
+     "waypoints": [[780, 960], [780, 900], [260, 900], [260, 580], [720, 580], [720, 600]]},
+    {"id": "MF_bi",      "from": "scUnlock",  "to": "aWork", "name": "бюджет bi",
+     "waypoints": [[1005, 600], [1005, 500], [1200, 500], [1200, 105], [725, 105], [725, 130]]}
+  ]
+}

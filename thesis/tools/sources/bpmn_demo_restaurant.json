@@ -1,0 +1,144 @@
+{
+  "id": "DEMO_RESTAURANT_ORDER",
+  "name": "Онлайн-заказ в ресторане с доставкой (demo)",
+  "pools": [
+    {
+      "id": "Participant_Customer",
+      "name": "Клиент",
+      "processId": "Process_Customer",
+      "bounds": [160, 80, 1720, 180],
+      "elements": [
+        {"id": "cuStart",   "type": "startEvent", "pos": [220, 152]},
+        {"id": "cuBrowse",  "type": "userTask",   "name": "Выбрать блюда", "pos": [290, 130], "size": [150, 80]},
+        {"id": "cuPay",     "type": "userTask",   "name": "Оплатить", "pos": [470, 130], "size": [150, 80]},
+        {"id": "cuTrack",   "type": "intermediateCatchEvent", "trigger": "message", "name": "Обновления", "pos": [1500, 152]},
+        {"id": "cuEnd",     "type": "endEvent",   "pos": [1620, 152]}
+      ],
+      "flows": [
+        {"id": "Flow_cu1", "from": "cuStart",  "to": "cuBrowse"},
+        {"id": "Flow_cu2", "from": "cuBrowse", "to": "cuPay"},
+        {"id": "Flow_cu3", "from": "cuPay",    "to": "cuTrack",
+         "waypoints": [[620, 170], [1500, 170]]},
+        {"id": "Flow_cu4", "from": "cuTrack",  "to": "cuEnd"}
+      ]
+    },
+    {
+      "id": "Participant_Payment",
+      "name": "Платёжная система",
+      "processId": "Process_Payment",
+      "bounds": [160, 300, 1720, 160],
+      "elements": [
+        {"id": "pyStart",   "type": "startEvent", "trigger": "message", "pos": [522, 362]},
+        {"id": "pyCharge",  "type": "serviceTask","name": "Списать средства", "pos": [590, 340], "size": [160, 80]},
+        {"id": "pyCheck",   "type": "exclusiveGateway", "name": "Успех?", "pos": [780, 355]},
+        {"id": "pyEndOk",   "type": "endEvent",   "pos": [870, 362]},
+        {"id": "pyEndFail", "type": "endEvent",   "pos": [870, 412]}
+      ],
+      "flows": [
+        {"id": "Flow_py1", "from": "pyStart",  "to": "pyCharge"},
+        {"id": "Flow_py2", "from": "pyCharge", "to": "pyCheck"},
+        {"id": "Flow_py3", "from": "pyCheck",  "to": "pyEndOk", "name": "Да"},
+        {"id": "Flow_py4", "from": "pyCheck",  "to": "pyEndFail", "name": "Нет",
+         "waypoints": [[805, 405], [805, 430], [870, 430]]}
+      ]
+    },
+    {
+      "id": "Participant_Cashier",
+      "name": "Ресторан — касса",
+      "processId": "Process_Cashier",
+      "bounds": [160, 500, 1720, 220],
+      "elements": [
+        {"id": "caStart",   "type": "startEvent", "trigger": "message", "pos": [220, 592]},
+        {"id": "caWait",    "type": "eventBasedGateway", "pos": [290, 585]},
+        {"id": "caPayOk",   "type": "intermediateCatchEvent", "trigger": "message", "name": "оплата", "pos": [380, 542]},
+        {"id": "caTimer",   "type": "intermediateCatchEvent", "trigger": "timer",   "name": "10 мин таймаут", "pos": [380, 642]},
+        {"id": "caCreate",  "type": "serviceTask","name": "Создать заказ", "pos": [460, 520], "size": [160, 80]},
+        {"id": "caCancel",  "type": "serviceTask","name": "Отменить заказ", "pos": [460, 620], "size": [160, 80]},
+        {"id": "caMerge",   "type": "exclusiveGateway", "pos": [660, 585]},
+        {"id": "caEnd",     "type": "endEvent",   "pos": [740, 592]}
+      ],
+      "flows": [
+        {"id": "Flow_ca1", "from": "caStart",  "to": "caWait"},
+        {"id": "Flow_ca2", "from": "caWait",   "to": "caPayOk",
+         "waypoints": [[315, 585], [315, 560], [380, 560]]},
+        {"id": "Flow_ca3", "from": "caWait",   "to": "caTimer",
+         "waypoints": [[315, 635], [315, 660], [380, 660]]},
+        {"id": "Flow_ca4", "from": "caPayOk",  "to": "caCreate"},
+        {"id": "Flow_ca5", "from": "caTimer",  "to": "caCancel"},
+        {"id": "Flow_ca6", "from": "caCreate", "to": "caMerge",
+         "waypoints": [[620, 560], [685, 560], [685, 585]]},
+        {"id": "Flow_ca7", "from": "caCancel", "to": "caMerge",
+         "waypoints": [[620, 660], [685, 660], [685, 635]]},
+        {"id": "Flow_ca8", "from": "caMerge",  "to": "caEnd"}
+      ]
+    },
+    {
+      "id": "Participant_Kitchen",
+      "name": "Ресторан — кухня",
+      "processId": "Process_Kitchen",
+      "bounds": [160, 760, 1720, 300],
+      "elements": [
+        {"id": "kiStart",    "type": "startEvent", "trigger": "message", "pos": [820, 882]},
+        {"id": "kiSplit",    "type": "parallelGateway", "pos": [890, 875]},
+        {"id": "kiCook",     "type": "userTask",   "name": "Приготовить блюда", "pos": [960, 820], "size": [160, 80]},
+        {"id": "kiPack",     "type": "userTask",   "name": "Упаковать", "pos": [960, 930], "size": [160, 80]},
+        {"id": "kiJoin",     "type": "parallelGateway", "pos": [1160, 875]},
+        {"id": "kiQuality",  "type": "exclusiveGateway", "name": "Качество ок?", "pos": [1240, 875]},
+        {"id": "kiRework",   "type": "userTask",   "name": "Переделать блюдо", "pos": [1100, 1020], "size": [200, 40]},
+        {"id": "kiReady",    "type": "intermediateThrowEvent", "trigger": "message", "name": "готов", "pos": [1340, 882]},
+        {"id": "kiEnd",      "type": "endEvent",   "pos": [1420, 882]}
+      ],
+      "flows": [
+        {"id": "Flow_ki1", "from": "kiStart",   "to": "kiSplit"},
+        {"id": "Flow_ki2", "from": "kiSplit",   "to": "kiCook",
+         "waypoints": [[915, 875], [915, 860], [960, 860]]},
+        {"id": "Flow_ki3", "from": "kiSplit",   "to": "kiPack",
+         "waypoints": [[915, 925], [915, 970], [960, 970]]},
+        {"id": "Flow_ki4", "from": "kiCook",    "to": "kiJoin",
+         "waypoints": [[1120, 860], [1185, 860], [1185, 875]]},
+        {"id": "Flow_ki5", "from": "kiPack",    "to": "kiJoin",
+         "waypoints": [[1120, 970], [1185, 970], [1185, 925]]},
+        {"id": "Flow_ki6", "from": "kiJoin",    "to": "kiQuality"},
+        {"id": "Flow_ki7", "from": "kiQuality", "to": "kiReady", "name": "Да"},
+        {"id": "Flow_ki8", "from": "kiQuality", "to": "kiRework", "name": "Нет",
+         "waypoints": [[1265, 925], [1265, 1000], [1200, 1000], [1200, 1020]]},
+        {"id": "Flow_ki9", "from": "kiRework",  "to": "kiCook",
+         "waypoints": [[1100, 1040], [950, 1040], [950, 860], [960, 860]]},
+        {"id": "Flow_ki10","from": "kiReady",   "to": "kiEnd"}
+      ]
+    },
+    {
+      "id": "Participant_Courier",
+      "name": "Курьер",
+      "processId": "Process_Courier",
+      "bounds": [160, 1100, 1720, 160],
+      "elements": [
+        {"id": "crStart",   "type": "startEvent", "trigger": "message", "pos": [1360, 1162]},
+        {"id": "crPickup",  "type": "userTask",   "name": "Забрать заказ", "pos": [1430, 1140], "size": [150, 80]},
+        {"id": "crDeliver", "type": "userTask",   "name": "Доставить", "pos": [1610, 1140], "size": [150, 80]},
+        {"id": "crEnd",     "type": "endEvent",   "pos": [1790, 1162]}
+      ],
+      "flows": [
+        {"id": "Flow_cr1", "from": "crStart",   "to": "crPickup"},
+        {"id": "Flow_cr2", "from": "crPickup",  "to": "crDeliver"},
+        {"id": "Flow_cr3", "from": "crDeliver", "to": "crEnd"}
+      ]
+    }
+  ],
+  "messageFlows": [
+    {"id": "MF_payReq",   "from": "cuPay",    "to": "pyStart",  "name": "платёж",
+     "waypoints": [[545, 210], [545, 362]]},
+    {"id": "MF_payRes",   "from": "pyEndOk",  "to": "caPayOk",  "name": "подтверждение",
+     "waypoints": [[888, 398], [888, 405], [925, 405], [925, 480], [398, 480], [398, 542]]},
+    {"id": "MF_orderNew", "from": "cuPay",    "to": "caStart",  "name": "заказ",
+     "waypoints": [[570, 210], [570, 480], [238, 480], [238, 592]]},
+    {"id": "MF_toKitchen","from": "caCreate", "to": "kiStart",  "name": "в работу",
+     "waypoints": [[540, 600], [540, 610], [640, 610], [640, 740], [838, 740], [838, 882]]},
+    {"id": "MF_toCourier","from": "kiReady",  "to": "crStart",  "name": "к доставке",
+     "waypoints": [[1358, 918], [1358, 1080], [1378, 1080], [1378, 1162]]},
+    {"id": "MF_statusReady","from": "kiReady","to": "cuTrack", "name": "готово",
+     "waypoints": [[1358, 882], [1358, 240], [1518, 240], [1518, 188]]},
+    {"id": "MF_delivered","from": "crDeliver","to": "cuTrack", "name": "доставлено",
+     "waypoints": [[1685, 1140], [1685, 240], [1531, 182]]}
+  ]
+}

@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Build output
+build/
+dist/
+artifacts/
+cache/
+typechain-types/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Python
+__pycache__/
+venv/
+
+# SQLite
+backend/data/
+
+# Deploy output
+deployed/
+
+# Misc
+*.tmp
+*.bak
+start.txt

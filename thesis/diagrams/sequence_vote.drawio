@@ -1,0 +1,344 @@
+<mxfile host="Electron" modified="2026-04-11T12:00:00.000Z" version="26.0.0">
+  <diagram id="seq-vote" name="Голосование по milestone">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1"
+                  tooltips="1" connect="1" arrows="1" fold="1"
+                  page="1" pageScale="1" pageWidth="1500" pageHeight="1400"
+                  math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITLE -->
+        <mxCell id="title" value="Диаграмма последовательности: Голосование по milestone"
+                style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="200" y="20" width="1100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ====== PARTICIPANT BOXES ====== -->
+        <!-- P1: Инвестор -->
+        <mxCell id="pInvestor" value="&lt;b&gt;Инвестор&lt;/b&gt;"
+                style="shape=mxgraph.uml.actor;pointerEvents=1;dashed=0;fillColor=#dae8fc;strokeColor=#6c8ebf;sketch=0;aspect=fixed;whiteSpace=wrap;html=1;"
+                vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="60" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- P2: Фронтенд -->
+        <mxCell id="pFrontend" value="&lt;b&gt;Фронтенд&lt;/b&gt;"
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;"
+                vertex="1" parent="1">
+          <mxGeometry x="310" y="90" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- P3: Бэкенд -->
+        <mxCell id="pBackend" value="&lt;b&gt;Бэкенд&lt;/b&gt;"
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;"
+                vertex="1" parent="1">
+          <mxGeometry x="570" y="90" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- P4: CrowdFund (Контракт) -->
+        <mxCell id="pCrowdFund" value="&lt;b&gt;CrowdFund&lt;br&gt;(Контракт)&lt;/b&gt;"
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;"
+                vertex="1" parent="1">
+          <mxGeometry x="860" y="80" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- P5: Блокчейн -->
+        <mxCell id="pBlockchain" value="&lt;b&gt;Блокчейн&lt;/b&gt;"
+                style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;"
+                vertex="1" parent="1">
+          <mxGeometry x="1170" y="90" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ====== LIFELINES ====== -->
+        <mxCell id="lifInvestor" value=""
+                style="edgeStyle=none;dashed=1;endArrow=none;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="130" y="170" as="sourcePoint" />
+            <mxPoint x="130" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifFrontend" value=""
+                style="edgeStyle=none;dashed=1;endArrow=none;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="380" y="170" as="sourcePoint" />
+            <mxPoint x="380" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifBackend" value=""
+                style="edgeStyle=none;dashed=1;endArrow=none;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="640" y="170" as="sourcePoint" />
+            <mxPoint x="640" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifCrowdFund" value=""
+                style="edgeStyle=none;dashed=1;endArrow=none;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="940" y="170" as="sourcePoint" />
+            <mxPoint x="940" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <mxCell id="lifBlockchain" value=""
+                style="edgeStyle=none;dashed=1;endArrow=none;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1240" y="170" as="sourcePoint" />
+            <mxPoint x="1240" y="1300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ====== ACTIVATION BOXES ====== -->
+        <!-- Investor: viewing + voting -->
+        <mxCell id="actInvestor1" value=""
+                style="fillColor=#dae8fc;strokeColor=#6c8ebf;"
+                vertex="1" parent="1">
+          <mxGeometry x="120" y="220" width="20" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend: receive vote -->
+        <mxCell id="actFrontend1" value=""
+                style="fillColor=#dae8fc;strokeColor=#6c8ebf;"
+                vertex="1" parent="1">
+          <mxGeometry x="370" y="240" width="20" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Backend: vote processing -->
+        <mxCell id="actBackend1" value=""
+                style="fillColor=#fff2cc;strokeColor=#d6b656;"
+                vertex="1" parent="1">
+          <mxGeometry x="630" y="360" width="20" height="330" as="geometry" />
+        </mxCell>
+
+        <!-- CrowdFund: vote -->
+        <mxCell id="actCrowdFund1" value=""
+                style="fillColor=#e1d5e7;strokeColor=#9673a6;"
+                vertex="1" parent="1">
+          <mxGeometry x="930" y="400" width="20" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- Blockchain: emit VoteCast -->
+        <mxCell id="actBlockchain1" value=""
+                style="fillColor=#d5e8d4;strokeColor=#82b366;"
+                vertex="1" parent="1">
+          <mxGeometry x="1230" y="530" width="20" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend: show result -->
+        <mxCell id="actFrontend2" value=""
+                style="fillColor=#dae8fc;strokeColor=#6c8ebf;"
+                vertex="1" parent="1">
+          <mxGeometry x="370" y="700" width="20" height="100" as="geometry" />
+        </mxCell>
+
+        <!-- Backend: finishVoting -->
+        <mxCell id="actBackend2" value=""
+                style="fillColor=#fff2cc;strokeColor=#d6b656;"
+                vertex="1" parent="1">
+          <mxGeometry x="630" y="890" width="20" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- CrowdFund: finishVoting + alt -->
+        <mxCell id="actCrowdFund2" value=""
+                style="fillColor=#e1d5e7;strokeColor=#9673a6;"
+                vertex="1" parent="1">
+          <mxGeometry x="930" y="930" width="20" height="310" as="geometry" />
+        </mxCell>
+
+        <!-- Blockchain: emit approved/rejected -->
+        <mxCell id="actBlockchain2" value=""
+                style="fillColor=#d5e8d4;strokeColor=#82b366;"
+                vertex="1" parent="1">
+          <mxGeometry x="1230" y="1060" width="20" height="50" as="geometry" />
+        </mxCell>
+
+        <mxCell id="actBlockchain3" value=""
+                style="fillColor=#d5e8d4;strokeColor=#82b366;"
+                vertex="1" parent="1">
+          <mxGeometry x="1230" y="1190" width="20" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ====== MESSAGES ====== -->
+
+        <!-- 1. Инвестор → Фронтенд: Просмотреть отчёт по milestone -->
+        <mxCell id="msg1" value="1: Просмотреть отчёт по milestone"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="250" as="sourcePoint" />
+            <mxPoint x="370" y="250" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 2. Инвестор → Фронтенд: Голосовать "За" / "Против" -->
+        <mxCell id="msg2" value="2: Голосовать &amp;laquo;За&amp;raquo; / &amp;laquo;Против&amp;raquo;"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="140" y="300" as="sourcePoint" />
+            <mxPoint x="370" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 3. Фронтенд → Бэкенд: POST /vote {milestoneId, decision} -->
+        <mxCell id="msg3" value="3: POST /vote {milestoneId, decision}"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="390" y="370" as="sourcePoint" />
+            <mxPoint x="630" y="370" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 4. Бэкенд → CrowdFund: vote(milestoneIndex, approve) -->
+        <mxCell id="msg4" value="4: vote(milestoneIndex, approve)"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="420" as="sourcePoint" />
+            <mxPoint x="930" y="420" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 5. CrowdFund → CrowdFund: Проверить snapshot, hasVoted (self-call) -->
+        <mxCell id="msg5" value="5: Проверить snapshot, hasVoted"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="480" as="sourcePoint" />
+            <mxPoint x="950" y="510" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1020" y="480" />
+              <mxPoint x="1020" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 6. CrowdFund → Блокчейн: emit VoteCast(voter, weight, decision) -->
+        <mxCell id="msg6" value="6: emit VoteCast(voter, weight, decision)"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="550" as="sourcePoint" />
+            <mxPoint x="1230" y="550" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 7. Блокчейн → Бэкенд: event VoteCast -->
+        <mxCell id="msg7" value="7: event VoteCast"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;dashed=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1230" y="600" as="sourcePoint" />
+            <mxPoint x="650" y="600" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 8. Бэкенд → Фронтенд: {success, currentVotes} -->
+        <mxCell id="msg8" value="8: {success, currentVotes}"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;dashed=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="630" y="710" as="sourcePoint" />
+            <mxPoint x="390" y="710" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 9. Фронтенд → Инвестор: "Голос учтён. За: X%, Против: Y%" -->
+        <mxCell id="msg9" value="9: &amp;laquo;Голос учтён. За: X%, Против: Y%&amp;raquo;"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=open;endFill=0;dashed=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="370" y="770" as="sourcePoint" />
+            <mxPoint x="140" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ====== NOTE: После истечения срока ====== -->
+        <mxCell id="noteTimeout" value="&lt;i&gt;После истечения срока голосования&lt;/i&gt;"
+                style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;fontSize=12;fillColor=#fffacd;strokeColor=#aaa;"
+                vertex="1" parent="1">
+          <mxGeometry x="250" y="830" width="280" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Separator line -->
+        <mxCell id="sepLine" value=""
+                style="edgeStyle=none;dashed=1;endArrow=none;strokeColor=#999999;strokeWidth=1;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="870" as="sourcePoint" />
+            <mxPoint x="1350" y="870" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 11. Бэкенд → CrowdFund: finishVoting(milestoneIndex) -->
+        <mxCell id="msg11" value="11: finishVoting(milestoneIndex)"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="940" as="sourcePoint" />
+            <mxPoint x="930" y="940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ====== ALT FRAME: Одобрен ====== -->
+        <mxCell id="altFrameApproved" value="alt [Одобрен]"
+                style="shape=mxgraph.sysml.package;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=10;fontSize=12;fontStyle=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=30;tabWidth=130;tabHeight=25;"
+                vertex="1" parent="1">
+          <mxGeometry x="880" y="980" width="420" height="120" as="geometry" />
+        </mxCell>
+
+        <!-- CrowdFund → CrowdFund: transfer(author, budget) -->
+        <mxCell id="msg12a" value="transfer(author, budget)"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="1020" as="sourcePoint" />
+            <mxPoint x="950" y="1050" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1020" y="1020" />
+              <mxPoint x="1020" y="1050" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- CrowdFund → Блокчейн: emit MilestoneApproved -->
+        <mxCell id="msg12b" value="emit MilestoneApproved"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="1080" as="sourcePoint" />
+            <mxPoint x="1230" y="1080" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ====== ALT FRAME: Отклонён ====== -->
+        <mxCell id="altFrameRejected" value="alt [Отклонён]"
+                style="shape=mxgraph.sysml.package;html=1;whiteSpace=wrap;align=left;verticalAlign=top;spacingLeft=10;fontSize=12;fontStyle=1;fillColor=#f8cecc;strokeColor=#b85450;opacity=30;tabWidth=130;tabHeight=25;"
+                vertex="1" parent="1">
+          <mxGeometry x="880" y="1130" width="420" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- CrowdFund → Блокчейн: emit MilestoneRejected -->
+        <mxCell id="msg13b" value="emit MilestoneRejected"
+                style="edgeStyle=orthogonalEdgeStyle;html=1;endArrow=block;endFill=1;fontSize=11;"
+                edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="950" y="1200" as="sourcePoint" />
+            <mxPoint x="1230" y="1200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

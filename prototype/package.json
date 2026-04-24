@@ -1,0 +1,26 @@
+{
+  "name": "crowdfund-platform",
+  "version": "1.0.0",
+  "description": "Tokenized crowdfunding platform with milestone-based escrow on Ethereum",
+  "scripts": {
+    "compile": "npx hardhat compile",
+    "test": "npx hardhat test",
+    "test:coverage": "npx hardhat coverage",
+    "node": "npx hardhat node",
+    "deploy": "npx hardhat run scripts/deploy.js --network localhost",
+    "backend": "cd backend && node server.js",
+    "frontend": "cd frontend && npm run dev",
+    "db:up": "docker-compose up -d",
+    "start": "concurrently \"npm run node\" \"npm run db:up\" \"npm run backend\" \"npm run frontend\""
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "hardhat": "^2.19.0",
+    "hardhat-gas-reporter": "^1.0.9",
+    "solidity-coverage": "^0.8.5",
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0"
+  }
+}
