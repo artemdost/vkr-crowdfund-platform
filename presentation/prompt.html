@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Промпт для Claude Design — ВКР</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="prompt.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Промпт для Claude Design — ВКР</h1>
+</header>
+<h1 id="промпт-для-claude-design">Промпт для Claude Design</h1>
+<p>Скопируйте весь текст ниже и вставьте в Claude Design.</p>
+<hr />
+<h2 id="контекст">Контекст</h2>
+<p>Сделай презентацию для защиты выпускной квалификационной работы
+бакалавра. Выступление — <strong>4 минуты</strong>, это
+<strong>предзащита в НИУ ВШЭ</strong>. Формат выступления:
+актуальность/новизна, цель/задачи, полученные результаты.</p>
+<p>Материалы работы в репозитории:
+https://github.com/artemdost/vkr-crowdfund-platform</p>
+<p><strong>Тема работы:</strong> Разработка алгоритма и прототипа
+краудфандинговой платформы на основе блокчейн-технологий с механизмом
+milestone-эскроу и голосованием инвесторов.</p>
+<p><strong>Автор:</strong> Достоев А. В., 22БИ <strong>Научный
+руководитель:</strong> Улитин Б. И. <strong>Вуз:</strong> НИУ ВШЭ,
+Нижний Новгород, 2026</p>
+<hr />
+<h2 id="требования-к-презентации">Требования к презентации</h2>
+<ul>
+<li><strong>Количество слайдов:</strong> 7</li>
+<li><strong>Язык:</strong> русский</li>
+<li><strong>Формат:</strong> 16:9</li>
+<li><strong>Стиль:</strong> деловой, академический, с акцентом на
+данные. Тёмно-синяя + белая + акцентный фиолетовый/голубой палитра (в
+тон прототипу). Минимум текста, крупные цифры. Шрифт: Inter, Montserrat
+или Times New Roman.</li>
+<li><strong>Не использовать:</strong> стены текста, клипарты, смайлы,
+мелкие таблицы со многими колонками</li>
+<li><strong>Обязательно:</strong> номер слайда и сноски внизу</li>
+</ul>
+<hr />
+<h2 id="содержание-слайдов">Содержание слайдов</h2>
+<h3 id="слайд-1-титульный-15-секунд">Слайд 1 — Титульный (15
+секунд)</h3>
+<p><strong>Заголовок (крупно):</strong> Разработка алгоритма и прототипа
+краудфандинговой платформы на основе блокчейн-технологий</p>
+<p><strong>Подзаголовок:</strong> Выпускная квалификационная работа
+бакалавра</p>
+<p><strong>Данные:</strong> - Автор: Достоев А. В. - Группа: 22БИ -
+Научный руководитель: к.т.н. Улитин Б. И. - Нижний Новгород, 2026</p>
+<p><strong>Визуал:</strong> абстрактный фон — блокчейн-узлы или
+архитектура сети, приглушённый.</p>
+<hr />
+<h3 id="слайд-2-актуальность-и-проблема-45-секунд">Слайд 2 —
+Актуальность и проблема (45 секунд)</h3>
+<p><strong>Заголовок:</strong> Актуальность</p>
+<p><strong>Три блока с крупными цифрами:</strong></p>
+<p>Блок 1: <strong>$18.4 → $46.4 млрд</strong> Подпись: Глобальный рынок
+краудфандинга, прогноз к 2033 году (CAGR 10,8%)</p>
+<p>Блок 2: <strong>54 млрд ₽</strong> Подпись: Рынок инвестиционных
+платформ РФ в 2024 году — восьмикратный рост за 4 года</p>
+<p>Блок 3: <strong>0</strong> Подпись: Web2-платформ (Kickstarter,
+Planeta, Boomstarter) предоставляют механизм поэтапного контроля
+расходования средств</p>
+<p><strong>Внизу — ключевое утверждение (рамкой или выделенным
+блоком):</strong> После перевода средств инвестор теряет контроль.
+Технология блокчейн и смарт-контрактов позволяет реализовать
+milestone-эскроу — прозрачный, автоматический и неотменяемый контроль
+расходования средств.</p>
+<p><strong>Изображение (справа или снизу, 30-40% слайда):</strong>
+<code>https://raw.githubusercontent.com/artemdost/vkr-crowdfund-platform/main/thesis/diagrams/ishikawa_a1.png</code>
+Подпись к изображению: Диаграмма Исикавы: системные проблемы
+Web2-краудфандинга</p>
+<hr />
+<h3 id="слайд-3-цель-и-задачи-30-секунд">Слайд 3 — Цель и задачи (30
+секунд)</h3>
+<p><strong>Заголовок:</strong> Цель и задачи работы</p>
+<p><strong>Цель (выделенным блоком):</strong> Разработать алгоритм и
+прототип краудфандинговой платформы на блокчейн, обеспечивающей
+прозрачность операций и поэтапный контроль расходования средств через
+milestone-эскроу с голосованием инвесторов.</p>
+<p><strong>Задачи (три колонки с иконками):</strong></p>
+<p>Колонка 1 — <strong>АНАЛИЗ</strong> (иконка: лупа/график) 1. Анализ
+рынка Web2-краудфандинга 2. Обзор научной литературы 3. Систематизация
+проблем (Исикава) 4. Анализ стейкхолдеров</p>
+<p>Колонка 2 — <strong>ПРОЕКТИРОВАНИЕ</strong> (иконка: чертёж/схема) 5.
+Модель AS-IS (BPMN) 6. Требования (MoSCoW) 7. Модель TO-BE + верификация
+(SPIN) 8. Алгоритм смарт-контрактов</p>
+<p>Колонка 3 — <strong>РЕАЛИЗАЦИЯ</strong> (иконка: код/шестерёнка) 9.
+Архитектура и данные 10. Прототип и оценка</p>
+<hr />
+<h3 id="слайд-4-объект-предмет-методы-новизна-30-секунд">Слайд 4 —
+Объект, предмет, методы, новизна (30 секунд)</h3>
+<p><strong>Заголовок:</strong> Объект, предмет, методы</p>
+<p><strong>Четыре блока:</strong></p>
+<p><strong>Объект:</strong> Процесс коллективного инвестирования в
+проекты</p>
+<p><strong>Предмет:</strong> Краудфандинговая платформа, обеспечивающая
+прозрачность и безопасность через блокчейн и milestone-эскроу</p>
+<p><strong>Методы:</strong> BPMN 2.0 · Диаграмма Исикавы · Матрица
+Mendelow · MoSCoW · Model checker SPIN · Прототипирование</p>
+<p><strong>Научная новизна:</strong> Алгоритм платформы, реализующий
+milestone-эскроу с голосованием инвесторов через смарт-контракты —
+механизм, <strong>недостижимый в Web2-архитектуре</strong>.</p>
+<hr />
+<h3 id="слайд-5-результаты-глав-1-2-60-секунд">Слайд 5 — Результаты глав
+1-2 (60 секунд)</h3>
+<p><strong>Заголовок:</strong> Результаты: анализ и проектирование
+процесса</p>
+<p><strong>Левая половина — Глава 1. Анализ:</strong></p>
+<ul>
+<li>Сравнительный анализ <strong>8 платформ</strong> (Web2 + Web3)</li>
+<li>Диаграмма Исикавы: <strong>5 категорий</strong> системных
+проблем</li>
+<li>Матрица Mendelow: <strong>4 группы</strong> стейкхолдеров</li>
+<li>Концепция, покрывающая <strong>7 принципов Guggenberger
+(2023)</strong></li>
+</ul>
+<p>Маленькая картинка под этим блоком:
+<code>https://raw.githubusercontent.com/artemdost/vkr-crowdfund-platform/main/thesis/diagrams/mendelow_matrix.png</code></p>
+<p><strong>Правая половина — Глава 2. Процесс:</strong></p>
+<ul>
+<li>BPMN AS-IS и TO-BE на <strong>двух уровнях</strong> детализации
+(Silver)</li>
+<li><strong>5 узких мест</strong> Web2-процесса устранены в TO-BE</li>
+<li><strong>7 критериев</strong>, <strong>12 функциональных</strong>,
+<strong>10 нефункциональных</strong> требований</li>
+<li>Формальная верификация: <strong>4-уровневый пайплайн</strong>
+(bpmnlint + SPIN)</li>
+</ul>
+<p>Маленькая картинка под этим блоком:
+<code>https://raw.githubusercontent.com/artemdost/vkr-crowdfund-platform/main/thesis/diagrams/bpmn_renders/bpmn_to_be_l1.png</code>
+Подпись: BPMN TO-BE, уровень L2</p>
+<hr />
+<h3
+id="слайд-6-результаты-главы-3-архитектура-и-прототип-60-секунд">Слайд 6
+— Результаты главы 3: архитектура и прототип (60 секунд)</h3>
+<p><strong>Заголовок:</strong> Результаты: архитектура и прототип</p>
+<p><strong>Верхняя полоса — архитектура (текст):</strong></p>
+<p>Гибридная двухслойная модель — Web2-интерфейс для пользователя +
+Web3-ядро (смарт-контракты) для финансовой логики. <strong>Платформа не
+хранит средства пользователей.</strong></p>
+<p>Иерархия из <strong>3 смарт-контрактов</strong> на Solidity 0.8.24:
+InvestToken (ERC-1155), FundFactory, CrowdFund. Атомарная разблокировка
+бюджета в момент завершения голосования.</p>
+<p><strong>Левая половина — диаграмма архитектуры:</strong>
+<code>https://raw.githubusercontent.com/artemdost/vkr-crowdfund-platform/main/thesis/diagrams/concept_architecture.png</code>
+Подпись: Концептуальная архитектура платформы</p>
+<p><strong>Правая половина — таблица эффектов (компактно):</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Web2</th>
+<th>Платформа</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Комиссия</td>
+<td>5-15%</td>
+<td><strong>1-3%</strong></td>
+</tr>
+<tr>
+<td>Скорость выплат</td>
+<td>3-14 дней</td>
+<td><strong>1-14 сек</strong></td>
+</tr>
+<tr>
+<td>Прозрачность</td>
+<td>нет</td>
+<td><strong>100% on-chain</strong></td>
+</tr>
+<tr>
+<td>Ликвидность</td>
+<td>нет</td>
+<td><strong>ERC-1155</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Внизу — два скриншота прототипа (рядом, 50/50):</strong> 1.
+<code>https://raw.githubusercontent.com/artemdost/vkr-crowdfund-platform/main/thesis/diagrams/proto_home.png</code>
+— Каталог кампаний 2.
+<code>https://raw.githubusercontent.com/artemdost/vkr-crowdfund-platform/main/thesis/diagrams/proto_project_active.png</code>
+— Активная кампания с голосованием</p>
+<p><strong>Метрики прототипа (выделить цифры):</strong> Покрытие
+тестами: <strong>94%</strong> по строкам · <strong>88%</strong> по
+ветвям · Полный сквозной сценарий пройден.</p>
+<hr />
+<h3 id="слайд-7-заключение-20-секунд">Слайд 7 — Заключение (20
+секунд)</h3>
+<p><strong>Заголовок:</strong> Заключение</p>
+<p><strong>Три блока:</strong></p>
+<p><strong>ДОСТИГНУТО (✓):</strong> - Все <strong>10 задач</strong>
+выполнены - Разработан и протестирован рабочий прототип - Реализованы
+все <strong>7 принципов Guggenberger (2023)</strong> - Сформирован
+<strong>4-этапный план</strong> перехода к production</p>
+<p><strong>ПРАКТИЧЕСКАЯ ЗНАЧИМОСТЬ:</strong> Готовое к внедрению
+решение, соответствующее формирующейся регуляторной базе РФ (ФЗ-259 и
+планируемый закон 2026 года).</p>
+<p><strong>ПЕРСПЕКТИВЫ:</strong> Специализированные типы контрактов
+(Debt, RevenueShare, Dividend, Growth) · Вторичный рынок на DEX ·
+Международная локализация.</p>
+<p><strong>В самом низу слайда:</strong> Репозиторий:
+github.com/artemdost/vkr-crowdfund-platform</p>
+<p><strong>Благодарность:</strong> Спасибо за внимание!</p>
+<hr />
+<h2 id="дополнительные-указания">Дополнительные указания</h2>
+<p><strong>Единообразие:</strong> - Заголовки всех слайдов — одинакового
+размера и положения - Сквозная нумерация слайдов внизу справа - В футере
+— название работы (маленьким шрифтом)</p>
+<p><strong>Анимация:</strong> - Минимум анимации — только появление
+блоков по клику, без летающих эффектов</p>
+<p><strong>Акценты:</strong> - Жирным/цветом выделять <strong>только
+цифры и ключевые утверждения</strong> - Все картинки с подписями шрифтом
+12-14 pt</p>
+<p><strong>Избегать:</strong> - Длинных списков маркированных пунктов -
+Скриншотов кода на Solidity - Технических деталей типа
+<code>msg.value</code>, <code>bcrypt</code>, <code>ABI</code>,
+<code>ERC-1155 tokenId</code> — это для ответов на вопросы</p>
+<hr />
+<h2 id="список-всех-доступных-изображений">Список всех доступных
+изображений</h2>
+<p>Все лежат по адресу:
+<code>https://raw.githubusercontent.com/artemdost/vkr-crowdfund-platform/main/thesis/diagrams/</code></p>
+<p><strong>Аналитика:</strong> - <code>ishikawa_a1.png</code> —
+Диаграмма Исикавы - <code>mendelow_matrix.png</code> — Матрица
+стейкхолдеров - <code>guggenberger_matrix.png</code> — Покрытие 7
+принципов - <code>market_chart.png</code> — Динамика рынков -
+<code>crowdfunding_actors.png</code> — Схема участников</p>
+<p><strong>Архитектура:</strong> - <code>concept_architecture.png</code>
+— Концептуальная архитектура - <code>component_diagram.png</code> —
+Компонентная диаграмма - <code>class_diagram_contracts.png</code> —
+Классы смарт-контрактов - <code>state_campaign.png</code> — Автомат
+кампании - <code>state_milestone.png</code> — Автомат этапа -
+<code>er_e1.png</code> — ER-модель - <code>sequence_invest.png</code> —
+Sequence: инвестирование - <code>use_case_g1.png</code> — Use Case</p>
+<p><strong>BPMN</strong> (в папке <code>bpmn_renders/</code>): -
+<code>bpmn_to_be_l1.png</code> — целевой процесс, уровень L2 -
+<code>bpmn_as_is_l1.png</code> — текущий процесс Web2, уровень L2</p>
+<p><strong>Прототип:</strong> - <code>proto_home.png</code> — каталог -
+<code>proto_project_active.png</code> — активная кампания с голосованием
+- <code>proto_project_completed.png</code> — завершённая -
+<code>proto_project_funding.png</code> — сбор средств -
+<code>proto_create.png</code> — форма создания -
+<code>proto_dashboard.png</code> — панель автора -
+<code>proto_profile.png</code> — личный кабинет -
+<code>proto_register.png</code> — регистрация -
+<code>proto_login.png</code> — вход</p>
+<hr />
+<p><strong>Собери презентацию, используя эти картинки и текст. Если
+Claude Design не может достать изображения по URL — вставь плейсхолдеры
+с подписями, я заменю позже.</strong></p>
+</body>
+</html>
