@@ -59,7 +59,8 @@ Thumbs.db
 
 # === Playwright / Claude ===
 .playwright-mcp/
-.claude/
+.claude/settings.local.json
+# .claude/skills/ — скиллы проекта, коммитятся
 
 # === Build artifacts (thesis) ===
 thesis/~$*.docx
