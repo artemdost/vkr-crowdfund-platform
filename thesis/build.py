@@ -36,12 +36,13 @@ INTRO_FILE = "00_введение.md"
 # Порядок файлов для Главы 1
 CHAPTER1_FILES = [
     "01_1_краудфандинг.md",
-    "01_2_анализ_рынка.md",
-    "01_3_блокчейн.md",
-    "01_4_web3.md",
-    "01_5_стейкхолдеры.md",
-    "01_6_концепция.md",
-    "01_7_выводы.md",
+    "01_2_инвестирование.md",
+    "01_3_анализ_рынка.md",
+    "01_4_блокчейн.md",
+    "01_5_web3.md",
+    "01_6_стейкхолдеры.md",
+    "01_7_концепция.md",
+    "01_8_выводы.md",
 ]
 
 # Порядок файлов для Главы 2 (бизнес-процесс)
@@ -62,11 +63,15 @@ CHAPTER3_FILES = [
     "03_4_сценарии.md",
     "03_5_план_внедрения.md",
     "03_6_прототип.md",
-    "03_7_выводы.md",
+    "03_7_ограничения.md",
+    "03_8_выводы.md",
 ]
 
 # Заключение
 CONCLUSION_FILE = "04_заключение.md"
+
+# Список использованных источников
+REFERENCES_FILE = "05_источники.md"
 
 # Приложения (по алфавиту: А, Б, В, Г, ...)
 APPENDIX_FILES = [
@@ -853,6 +858,36 @@ def build():
                 add_list_item(doc, elem[1])
     else:
         print(f"  [!] {CONCLUSION_FILE} не найден")
+
+    # === СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ ===
+    references_path = DRAFTS / REFERENCES_FILE
+    if references_path.exists():
+        print(f"  Обрабатываю {REFERENCES_FILE}...")
+        elements = parse_markdown(references_path.read_text(encoding='utf-8'))
+        for elem in elements:
+            if elem[0] == 'heading':
+                # Заголовок «СПИСОК ИСПОЛЬЗОВАННЫХ ИСТОЧНИКОВ» как заголовок главы
+                add_chapter_heading(doc, elem[1])
+            elif elem[0] == 'body':
+                # Каждая запись — параграф с висячим отступом (без красной строки)
+                para = doc.add_paragraph()
+                parts = re.split(r'(\*\*.*?\*\*)', elem[1])
+                for part in parts:
+                    if part.startswith('**') and part.endswith('**'):
+                        run = para.add_run(part[2:-2])
+                        set_run_font(run, bold=True)
+                    else:
+                        run = para.add_run(part)
+                        set_run_font(run)
+                pf = para.paragraph_format
+                pf.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+                pf.line_spacing = 1.5
+                pf.space_after = Pt(6)
+                pf.space_before = Pt(0)
+                pf.first_line_indent = Cm(0)
+                pf.left_indent = Cm(0)
+    else:
+        print(f"  [!] {REFERENCES_FILE} не найден")
 
     # === ПРИЛОЖЕНИЯ ===
     for app_name in APPENDIX_FILES:
